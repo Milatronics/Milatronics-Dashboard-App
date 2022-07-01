@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Milatronics Dashboard</string>
+    <string name="cancel">Cancel</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="next">Next</string>
+    <string name="milatronics_login_page">Milatronics Login Page</string>
+    <string name="error_password">Password must contain at least 8 characters.</string>
 </resources>
