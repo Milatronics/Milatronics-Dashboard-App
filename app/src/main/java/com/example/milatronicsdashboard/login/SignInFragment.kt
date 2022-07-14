@@ -59,7 +59,17 @@ class SignInFragment : Fragment() {
             password_text_input_sign_in.error = getString(R.string.error_password)
         } else {
             password_text_input_sign_in.error = null
-
+            Amplify.Auth.signIn(email_text_edit_text.text.toString().trim(), password_edit_text_sign_in.text.toString(),
+//            Amplify.Auth.signIn("e26b79de-1531-4c01-98f4-528a72b56565", "Password123",
+                { result ->
+                    if (result.isSignInComplete) {
+                        Log.i("AuthQuickstart", "Sign in succeeded")
+                    } else {
+                        Log.i("AuthQuickstart", "Sign in not complete")
+                    }
+                },
+                { Log.e("AuthQuickstart", "Failed to sign in", it) }
+            )
         }
     }
 

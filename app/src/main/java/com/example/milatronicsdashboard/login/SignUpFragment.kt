@@ -39,17 +39,17 @@ class SignUpFragment : Fragment() {
 
     private fun signUp(){
         // Sign up
-        name = binding.nameEditText.text.toString()
-        email = binding.emailEditTextInputSignUp.text.toString()
-        password = binding.passwordEditTextSignUp.text.toString()
+        name = binding.nameEditText.text.toString().trim()
+        email = binding.emailEditTextInputSignUp.text.toString().trim()
+        password = binding.passwordEditTextSignUp.text.toString().trim()
 
         if(name != null && email != null && password != null && password!!.length >= 8){
             val options = AuthSignUpOptions.builder()
-                .userAttribute(AuthUserAttributeKey.name(), binding.nameEditText.text.toString())
+                .userAttribute(AuthUserAttributeKey.name(), binding.nameEditText.text.toString().trim())
                 .build()
-            Amplify.Auth.signUp(binding.emailEditTextInputSignUp.text.toString(), binding.passwordEditTextSignUp.text.toString(), options,
+            Amplify.Auth.signUp(binding.emailEditTextInputSignUp.text.toString().trim(), binding.passwordEditTextSignUp.text.toString().trim(), options,
                 {
-                    val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(email = binding.emailEditTextInputSignUp.text.toString())
+                    val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(email = binding.emailEditTextInputSignUp.text.toString().trim())
                     findNavController().navigate(action)
                     Log.i("AuthQuickStart", "Sign up succeeded: $it") },
                 { Log.e ("AuthQuickStart", "Sign up failed", it) }
