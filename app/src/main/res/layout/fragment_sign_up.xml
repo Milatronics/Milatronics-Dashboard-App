@@ -47,6 +47,7 @@
         tools:layout_editor_absoluteX="4dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit_text_input_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>

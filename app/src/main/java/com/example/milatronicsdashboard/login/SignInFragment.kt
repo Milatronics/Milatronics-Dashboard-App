@@ -1,12 +1,16 @@
 package com.example.milatronicsdashboard.login
 
+import android.app.Activity
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.amplifyframework.auth.AuthProvider
+import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentSignInBinding
 import kotlinx.android.synthetic.main.fragment_sign_in.*
@@ -28,6 +32,13 @@ class SignInFragment : Fragment() {
         binding.root.sign_in_button.setOnClickListener {
             signIn()
         }
+        binding.root.google_sign_in_button.setOnClickListener {
+            Amplify.Auth.signInWithSocialWebUI(
+                AuthProvider.google(), activity as Activity,
+                { Log.i("AuthQuickstart", "Sign in OK: $it") },
+                { Log.e("AuthQuickstart", "Sign in failed", it) }
+            )
+        }
         binding.root.sign_up_now.setOnClickListener {
             gotoSignUp()
         }
@@ -47,8 +58,8 @@ class SignInFragment : Fragment() {
         if (!isPasswordValid(password_edit_text_sign_in.text)) {
             password_text_input_sign_in.error = getString(R.string.error_password)
         } else {
-            password_text_input_sign_in.error = null // Clear the error
-//                (activity as NavigationHost).navigateTo(UserFragment(), false) // Login to the user
+            password_text_input_sign_in.error = null
+
         }
     }
 
