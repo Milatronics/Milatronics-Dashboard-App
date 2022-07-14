@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentSignInBinding
 import kotlinx.android.synthetic.main.fragment_sign_in.*
@@ -24,22 +25,32 @@ class SignInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set an error if the password is less than 8 characters.
-        binding.root.next_button.setOnClickListener {
-            if (!isPasswordValid(password_edit_text.text)) {
-                password_text_input.error = getString(R.string.error_password)
-            } else {
-                password_text_input.error = null // Clear the error
-//                findNavController().navigate(R.id.action_signInFragment_to_firstFragment)
-//                (activity as NavigationHost).navigateTo(UserFragment(), false) // Login to the user
-            }
+        binding.root.sign_in_button.setOnClickListener {
+            signIn()
+        }
+        binding.root.goto_sign_up_button.setOnClickListener {
+            signUp()
         }
         // Clear the error once more than 8 characters are typed.
-        view.password_edit_text.setOnKeyListener { _, _, _ ->
-            if (isPasswordValid(password_edit_text.text)) {
-                password_text_input.error = null //Clear the error
+        binding.root.password_edit_text_sign_in.setOnKeyListener { _, _, _ ->
+            if (isPasswordValid(password_edit_text_sign_in.text)) {
+                password_text_input_sign_in.error = null //Clear the error
             }
             false
         }
+    }
+
+    private fun signIn(){
+        if (!isPasswordValid(password_edit_text_sign_in.text)) {
+            password_text_input_sign_in.error = getString(R.string.error_password)
+        } else {
+            password_text_input_sign_in.error = null // Clear the error
+//                (activity as NavigationHost).navigateTo(UserFragment(), false) // Login to the user
+        }
+    }
+
+    private fun signUp(){
+        findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
     }
 
     private fun isPasswordValid(text: Editable?): Boolean {
