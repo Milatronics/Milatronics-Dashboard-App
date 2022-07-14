@@ -13,7 +13,7 @@
     <string name="home">Home</string>
     <string name="devices">Devices</string>
     <string name="stats">Stats</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">Milatronics Dashboard</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>

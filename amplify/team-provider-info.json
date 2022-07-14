@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-milatronicsdashboard-dev-82424-authRole",
+      "UnauthRoleArn": "arn:aws:iam::928268055924:role/amplify-milatronicsdashboard-dev-82424-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::928268055924:role/amplify-milatronicsdashboard-dev-82424-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-milatronicsdashboard-dev-82424-deployment",
+      "UnauthRoleName": "amplify-milatronicsdashboard-dev-82424-unauthRole",
+      "StackName": "amplify-milatronicsdashboard-dev-82424",
+      "StackId": "arn:aws:cloudformation:ap-south-1:928268055924:stack/amplify-milatronicsdashboard-dev-82424/456f6b00-0320-11ed-a69f-0a4ea74cce86",
+      "AmplifyAppId": "d36ydw25yjq9gh"
+    },
+    "categories": {
+      "auth": {
+        "milatronicsdashboard2c748a21": {}
+      }
+    }
+  }
+}
