@@ -25,12 +25,13 @@ class SignUpFragment : Fragment() {
         binding.root.sign_up_button.setOnClickListener {
             signUp()
         }
-        binding.root.cancel_button.setOnClickListener {
+        binding.root.cancel_button_sign_up.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
     }
 
     private fun signUp(){
-
+        // Sign up
+        findNavController().navigate(R.id.action_signUpFragment_to_confirmSignUpFragment)
     }
 }

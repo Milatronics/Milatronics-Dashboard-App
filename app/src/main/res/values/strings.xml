@@ -159,4 +159,6 @@
     <string name="EmailRequired">Email *</string>
     <string name="nameRequired">Name *</string>
     <string name="passwordRequired">Password *</string>
+    <string name="enter_verification_code">6-Digit Verification Code</string>
+    <string name="confirm">Confirm</string>
 </resources>

@@ -21,5 +21,17 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_confirmSignUpFragment"
+            app:destination="@id/confirmSignUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmSignUpFragment"
+        android:name="com.example.milatronicsdashboard.login.ConfirmSignUpFragment"
+        android:label="Confirm you email"
+        tools:layout="@layout/fragment_confirm_sign_up">
+        <action
+            android:id="@+id/action_confirmSignUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
 </navigation>
