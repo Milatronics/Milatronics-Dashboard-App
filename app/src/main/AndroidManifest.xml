@@ -26,30 +26,21 @@
             android:name=".login.LoginActivity"
             android:exported="true"
             android:label="@string/title_activity_login"
-            android:noHistory="true"
             android:theme="@style/Theme.MilatronicsDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <data android:scheme="milatronics" android:host="signout" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserActivity" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="milatronics" android:host="signin" />
-            </intent-filter>
+        <activity android:name=".UserActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name="com.amplifyframework.auth.cognito.activities.HostedUIRedirectActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="milatronics" />
             </intent-filter>

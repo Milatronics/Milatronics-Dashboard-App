@@ -28,8 +28,7 @@ class LoginActivity : AppCompatActivity() {
         Amplify.Auth.fetchAuthSession({
             Log.i("AmplifyQuickstart", "Auth session = $it")
             if(it.isSignedIn){
-                val intent = Intent(this, UserActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, UserActivity::class.java))
             }
         },
             { error -> Log.e("AmplifyQuickstart", "Failed to fetch auth session", error) }

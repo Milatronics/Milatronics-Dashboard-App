@@ -1,6 +1,7 @@
 package com.example.milatronicsdashboard.login
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.amplifyframework.auth.AuthProvider
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
+import com.example.milatronicsdashboard.UserActivity
 import com.example.milatronicsdashboard.databinding.FragmentSignInBinding
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
@@ -35,7 +37,8 @@ class SignInFragment : Fragment() {
         binding.root.google_sign_in_button.setOnClickListener {
             Amplify.Auth.signInWithSocialWebUI(
                 AuthProvider.google(), activity as Activity,
-                { Log.i("AuthQuickstart", "Sign in OK: $it") },
+                { startActivity(Intent(activity, UserActivity::class.java))
+                    Log.i("AuthQuickstart", "Sign in OK: $it") },
                 { Log.e("AuthQuickstart", "Sign in failed", it) }
             )
         }
@@ -64,6 +67,7 @@ class SignInFragment : Fragment() {
                 { result ->
                     if (result.isSignInComplete) {
                         Log.i("AuthQuickstart", "Sign in succeeded")
+                        startActivity(Intent(activity, UserActivity::class.java))
                     } else {
                         Log.i("AuthQuickstart", "Sign in not complete")
                     }
