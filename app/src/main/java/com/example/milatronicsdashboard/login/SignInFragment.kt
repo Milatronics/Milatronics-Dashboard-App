@@ -28,8 +28,11 @@ class SignInFragment : Fragment() {
         binding.root.sign_in_button.setOnClickListener {
             signIn()
         }
-        binding.root.goto_sign_up_button.setOnClickListener {
-            signUp()
+        binding.root.sign_up_now.setOnClickListener {
+            gotoSignUp()
+        }
+        binding.root.forgot_password.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
         }
         // Clear the error once more than 8 characters are typed.
         binding.root.password_edit_text_sign_in.setOnKeyListener { _, _, _ ->
@@ -49,7 +52,7 @@ class SignInFragment : Fragment() {
         }
     }
 
-    private fun signUp(){
+    private fun gotoSignUp(){
         findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
     }
 

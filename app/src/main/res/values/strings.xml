@@ -161,4 +161,8 @@
     <string name="passwordRequired">Password *</string>
     <string name="enter_verification_code">6-Digit Verification Code</string>
     <string name="confirm">Confirm</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up_now">Sign Up Now</string>
 </resources>
