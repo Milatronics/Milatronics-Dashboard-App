@@ -30,6 +30,8 @@ class UserActivity : AppCompatActivity(){
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
+
+
 //    /**
 //     * Navigate to the given fragment.
 //     *
