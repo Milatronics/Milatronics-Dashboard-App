@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
             Log.i("AmplifyQuickstart", "Auth session = $it")
             if(it.isSignedIn){
                 startActivity(Intent(this, UserActivity::class.java))
+                finish()
             }
         },
             { error -> Log.e("AmplifyQuickstart", "Failed to fetch auth session", error) }
