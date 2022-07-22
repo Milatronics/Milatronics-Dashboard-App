@@ -1,24 +1,25 @@
 package com.example.milatronicsdashboard.login
 
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.amplifyframework.auth.AuthException
 import com.amplifyframework.auth.AuthUserAttributeKey
 import com.amplifyframework.auth.options.AuthSignUpOptions
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentSignUpBinding
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_sign_up.*
 import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 
 
 class SignUpFragment : Fragment() {
-    private var name: String? = null
-    private var email: String? = null
-    private var password: String? = null
     private lateinit var binding: FragmentSignUpBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -35,26 +36,79 @@ class SignUpFragment : Fragment() {
         binding.root.cancel_button_sign_up.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
+
+        binding.root.password_edit_text_sign_up.setOnKeyListener { _, _, _ ->
+            if (isPasswordValid(password_edit_text_sign_up.text)) {
+                password_text_input_sign_up.error = null //Clear the error
+            }
+            false
+        }
     }
 
     private fun signUp(){
         // Sign up
-        name = binding.nameEditText.text.toString().trim()
-        email = binding.emailEditTextInputSignUp.text.toString().trim()
-        password = binding.passwordEditTextSignUp.text.toString().trim()
+        val name = binding.nameEditText.text.toString().trim()
+        val email = binding.emailEditTextInputSignUp.text.toString().trim()
+        val password = binding.passwordEditTextSignUp.text.toString()
 
-        if(name != null && email != null && password != null && password!!.length >= 8){
-            val options = AuthSignUpOptions.builder()
-                .userAttribute(AuthUserAttributeKey.name(), binding.nameEditText.text.toString().trim())
-                .build()
-            Amplify.Auth.signUp(binding.emailEditTextInputSignUp.text.toString().trim(), binding.passwordEditTextSignUp.text.toString().trim(), options,
-                {
-                    val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(email = binding.emailEditTextInputSignUp.text.toString().trim())
-                    findNavController().navigate(action)
-                    Log.i("AuthSignUp", "Sign up succeeded: $it") },
-                { Log.e ("AuthSignUp", "Sign up failed", it) }
-            )
+        if(name == ""){
+            Snackbar.make(binding.root, "Please enter your name.", Snackbar.LENGTH_SHORT).show()
+            return
+        }
+        if(email == ""){
+            Snackbar.make(binding.root, "Please enter your email id.", Snackbar.LENGTH_SHORT).show()
+            return
+        }
+        if(password == ""){
+            Snackbar.make(binding.root, "Please enter a password.", Snackbar.LENGTH_SHORT).show()
+            return
+        }
+        if (!isPasswordValid(password_edit_text_sign_up.text)){
+            password_text_input_sign_up.error = getString(R.string.error_password)
+            return
         }
 
+        Log.i("AuthSignUp", "Name: $name, Email: $email, Password: $password")
+
+        val options = AuthSignUpOptions.builder()
+            .userAttribute(AuthUserAttributeKey.name(), name)
+            .build()
+        Amplify.Auth.signUp(email, password, options,
+            {
+                Log.i("AuthSignUp", "Sign up succeeded: $it")
+                Snackbar.make(binding.root, "Verification code sent to $email.", Snackbar.LENGTH_SHORT).show()
+                try {
+                    val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(emailId = email)
+                    findNavController().navigate(action)
+                } catch (e: IllegalStateException) {
+                    Log.e("AuthSignUp", "$e")
+                }
+            },
+            {
+                try{
+                    Log.e("AuthSignUp", "$it")
+                    throw it
+                }
+                catch (e: AuthException.UsernameExistsException) {
+                    Snackbar.make(binding.root, "Account already exists.", Snackbar.LENGTH_SHORT).show()
+                    try {
+                        val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(emailId = email)
+                        findNavController().navigate(action)
+                    } catch (e: IllegalStateException) {
+                        Log.e("AuthSignUp", "$e")
+                    }
+                }
+                catch (e: AuthException.InvalidParameterException) {
+                    Snackbar.make(binding.root, "Invalid email id", Snackbar.LENGTH_SHORT).show()
+                }
+                catch(e: AuthException){
+                    Snackbar.make(binding.root, "Sign up failed. Try again", Snackbar.LENGTH_SHORT).show()
+                }
+            }
+        )
+    }
+
+    private fun isPasswordValid(text: Editable?): Boolean {
+        return text != null && text.length >= 8
     }
 }

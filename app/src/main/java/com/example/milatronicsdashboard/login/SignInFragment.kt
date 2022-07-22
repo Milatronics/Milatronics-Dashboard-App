@@ -13,8 +13,10 @@ import com.amplifyframework.auth.AuthProvider
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentSignInBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
+
 
 // Fragment representing the login screen for the users
 class SignInFragment : Fragment() {
@@ -60,9 +62,13 @@ class SignInFragment : Fragment() {
                         (activity as LoginActivity).onSuccessfulSignIn()
                     } else {
                         Log.i("AuthSignIn", "Sign in not complete")
+                        Snackbar.make(binding.root, "Sign-In Failed", Snackbar.LENGTH_SHORT).show()
                     }
                 },
-                { Log.e("AuthSignIn", "Failed to sign in", it) }
+                {
+                    Log.e("AuthSignIn", "Failed to sign in", it)
+                    Snackbar.make(binding.root, "Username/Password is incorrect", Snackbar.LENGTH_SHORT).show()
+                }
             )
         }
     }
@@ -70,8 +76,13 @@ class SignInFragment : Fragment() {
     private fun googleSignIn(){
         Amplify.Auth.signInWithSocialWebUI(
             AuthProvider.google(), activity as Activity,
-            { (activity as LoginActivity).onSuccessfulSignIn() },
-            { Log.e("AuthGoogleSignIn", "Sign in failed", it) }
+            {
+                (activity as LoginActivity).onSuccessfulSignIn()
+            },
+            {
+                Log.e("AuthGoogleSignIn", "Sign in failed", it)
+                Snackbar.make(binding.root, "Google Sign in failed. Try Again.", Snackbar.LENGTH_SHORT).show()
+            }
         )
     }
 

@@ -13,6 +13,7 @@ import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.UserActivity
 import com.example.milatronicsdashboard.databinding.ActivityLoginBinding
+import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -28,7 +29,10 @@ class LoginActivity : AppCompatActivity() {
                 if(it.isSignedIn)
                     onSuccessfulSignIn()
             },
-            { error -> Log.e("AuthFetchSession", "Failed to fetch auth session", error) }
+            {
+                error -> Log.e("AuthFetchSession", "Failed to fetch auth session", error)
+                Snackbar.make(binding.root, "No Network.", Snackbar.LENGTH_SHORT).show()
+            }
         )
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -56,7 +60,10 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             },
-            { Log.e("AuthFetchUserAttributes", "Failed to fetch user attributes", it) }
+            {
+                Log.e("AuthFetchUserAttributes", "Failed to fetch user attributes", it)
+                Snackbar.make(binding.root, "No Network.", Snackbar.LENGTH_SHORT).show()
+            }
         )
     }
 }

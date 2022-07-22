@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentForgotPasswordBinding
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_forgot_password.*
 import kotlinx.android.synthetic.main.fragment_forgot_password.view.*
 
@@ -34,12 +35,18 @@ class ForgotPasswordFragment : Fragment() {
     }
 
     private fun reset(){
-        // Confirm first
+        val email = email_text_input_password_reset_edit_text.text.toString().trim()
 
-        Amplify.Auth.resetPassword(email_text_input_password_reset_edit_text.text.toString().trim(),
-            { Log.i("AuthPasswordReset", "Password reset OK: $it") },
-            {error-> Log.e("AuthPasswordReset", "Password reset failed", error) }
+        Amplify.Auth.resetPassword(email,
+            {
+                Log.i("AuthPasswordReset", "Password reset OK: $it")
+                Snackbar.make(binding.root, "Password reset code sent to $email", Snackbar.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_forgotPasswordFragment_to_signInFragment)
+            },
+            {
+                Log.e("AuthPasswordReset", "Password reset failed: $it")
+                Snackbar.make(binding.root, "Password reset failed.", Snackbar.LENGTH_SHORT).show()
+            }
         )
-        findNavController().navigate(R.id.action_forgotPasswordFragment_to_signInFragment)
     }
 }

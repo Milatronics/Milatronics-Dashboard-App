@@ -24,6 +24,8 @@ class UserActivity : AppCompatActivity(){
 
         email = intent.getStringExtra(AuthUserAttributeKey.email().keyString).toString()
         name = intent.getStringExtra(AuthUserAttributeKey.name().keyString).toString()
+
+//        Snackbar.make(binding.root, "Logged in as $name", Snackbar.LENGTH_SHORT).show()
     }
 
     override fun onSupportNavigateUp(): Boolean {
