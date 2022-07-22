@@ -59,10 +59,10 @@ class SignInFragment : Fragment() {
                     if (result.isSignInComplete) {
                         (activity as LoginActivity).onSuccessfulSignIn()
                     } else {
-                        Log.i("AuthQuickstart", "Sign in not complete")
+                        Log.i("AuthSignIn", "Sign in not complete")
                     }
                 },
-                { Log.e("AuthQuickstart", "Failed to sign in", it) }
+                { Log.e("AuthSignIn", "Failed to sign in", it) }
             )
         }
     }
@@ -71,7 +71,7 @@ class SignInFragment : Fragment() {
         Amplify.Auth.signInWithSocialWebUI(
             AuthProvider.google(), activity as Activity,
             { (activity as LoginActivity).onSuccessfulSignIn() },
-            { Log.e("AuthQuickstart", "Sign in failed", it) }
+            { Log.e("AuthGoogleSignIn", "Sign in failed", it) }
         )
     }
 

@@ -9,7 +9,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.UserActivity
@@ -23,16 +22,13 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Amplify.addPlugin(AWSCognitoAuthPlugin())
-        Amplify.configure(applicationContext)
-
         Amplify.Auth.fetchAuthSession(
             {
-                Log.i("AmplifyQuickstart", "Auth session = $it")
+                Log.i("AuthFetchSession", "Auth session = $it")
                 if(it.isSignedIn)
                     onSuccessfulSignIn()
             },
-            { error -> Log.e("AmplifyQuickstart", "Failed to fetch auth session", error) }
+            { error -> Log.e("AuthFetchSession", "Failed to fetch auth session", error) }
         )
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -53,15 +49,14 @@ class LoginActivity : AppCompatActivity() {
     fun onSuccessfulSignIn(){
         Amplify.Auth.fetchUserAttributes(
             { attributes ->
-                Log.i("AuthDemo", "SignIn successful. User attributes = $attributes")
+                Log.i("AuthFetchUserAttributes", "SignIn successful. User attributes = $attributes")
 
                 val intent = Intent(this, UserActivity::class.java)
                 attributes.forEach{intent.putExtra(it.key.keyString, it.value)}
-                Log.i("AuthDemoLogin","${intent.extras}")
                 startActivity(intent)
                 finish()
             },
-            { Log.e("AuthDemo", "Failed to fetch user attributes", it) }
+            { Log.e("AuthFetchUserAttributes", "Failed to fetch user attributes", it) }
         )
     }
 }

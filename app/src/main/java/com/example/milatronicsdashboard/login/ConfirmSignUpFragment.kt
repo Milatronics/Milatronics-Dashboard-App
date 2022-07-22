@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_confirm_sign_up.view.*
 class ConfirmSignUpFragment : Fragment() {
     private lateinit var binding: FragmentConfirmSignUpBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentConfirmSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -41,13 +41,13 @@ class ConfirmSignUpFragment : Fragment() {
             email, binding.confirmationEditText.text.toString(),
             { result ->
                 if (result.isSignUpComplete) {
-                    Log.i("AuthQuickstart", "Confirm signUp succeeded")
+                    Log.i("AuthConfirmSignUp", "Confirm signUp succeeded")
                      findNavController().navigate(R.id.action_confirmSignUpFragment_to_signInFragment)
                 } else {
-                    Log.i("AuthQuickstart","Confirm sign up not complete")
+                    Log.i("AuthConfirmSignUp","Confirm sign up not complete")
                 }
             },
-            { Log.e("AuthQuickstart", "Failed to confirm sign up", it) }
+            { Log.e("AuthConfirmSignUp", "Failed to confirm sign up", it) }
         )
     }
 }

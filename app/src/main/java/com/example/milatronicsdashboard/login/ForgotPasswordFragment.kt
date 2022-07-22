@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_forgot_password.view.*
 class ForgotPasswordFragment : Fragment() {
     private lateinit var binding: FragmentForgotPasswordBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,8 +37,8 @@ class ForgotPasswordFragment : Fragment() {
         // Confirm first
 
         Amplify.Auth.resetPassword(email_text_input_password_reset_edit_text.text.toString().trim(),
-            { Log.i("AuthQuickstart", "Password reset OK: $it") },
-            {error-> Log.e("AuthQuickstart", "Password reset failed", error) }
+            { Log.i("AuthPasswordReset", "Password reset OK: $it") },
+            {error-> Log.e("AuthPasswordReset", "Password reset failed", error) }
         )
         findNavController().navigate(R.id.action_forgotPasswordFragment_to_signInFragment)
     }

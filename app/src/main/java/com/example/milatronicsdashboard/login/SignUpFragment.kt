@@ -21,7 +21,7 @@ class SignUpFragment : Fragment() {
     private var password: String? = null
     private lateinit var binding: FragmentSignUpBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -51,8 +51,8 @@ class SignUpFragment : Fragment() {
                 {
                     val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(email = binding.emailEditTextInputSignUp.text.toString().trim())
                     findNavController().navigate(action)
-                    Log.i("AuthQuickStart", "Sign up succeeded: $it") },
-                { Log.e ("AuthQuickStart", "Sign up failed", it) }
+                    Log.i("AuthSignUp", "Sign up succeeded: $it") },
+                { Log.e ("AuthSignUp", "Sign up failed", it) }
             )
         }
 
