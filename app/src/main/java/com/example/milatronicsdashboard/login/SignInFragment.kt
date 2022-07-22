@@ -1,7 +1,6 @@
 package com.example.milatronicsdashboard.login
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
@@ -13,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.amplifyframework.auth.AuthProvider
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
-import com.example.milatronicsdashboard.UserActivity
 import com.example.milatronicsdashboard.databinding.FragmentSignInBinding
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
@@ -22,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,21 +28,14 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Set an error if the password is less than 8 characters.
         binding.root.sign_in_button.setOnClickListener {
             signIn()
         }
         binding.root.google_sign_in_button.setOnClickListener {
-            Amplify.Auth.signInWithSocialWebUI(
-                AuthProvider.google(), activity as Activity,
-                { startActivity(Intent(activity, UserActivity::class.java))
-                    activity?.finish()
-                    Log.i("AuthQuickstart", "Sign in OK: $it") },
-                { Log.e("AuthQuickstart", "Sign in failed", it) }
-            )
+            googleSignIn()
         }
         binding.root.sign_up_now.setOnClickListener {
-            gotoSignUp()
+            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
         binding.root.forgot_password.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
@@ -64,12 +55,9 @@ class SignInFragment : Fragment() {
         } else {
             password_text_input_sign_in.error = null
             Amplify.Auth.signIn(email_text_edit_text.text.toString().trim(), password_edit_text_sign_in.text.toString(),
-//            Amplify.Auth.signIn("e26b79de-1531-4c01-98f4-528a72b56565", "Password123",
                 { result ->
                     if (result.isSignInComplete) {
-                        Log.i("AuthQuickstart", "Sign in succeeded")
-                        startActivity(Intent(activity, UserActivity::class.java))
-                        activity?.finish()
+                        (activity as LoginActivity).onSuccessfulSignIn()
                     } else {
                         Log.i("AuthQuickstart", "Sign in not complete")
                     }
@@ -79,8 +67,12 @@ class SignInFragment : Fragment() {
         }
     }
 
-    private fun gotoSignUp(){
-        findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
+    private fun googleSignIn(){
+        Amplify.Auth.signInWithSocialWebUI(
+            AuthProvider.google(), activity as Activity,
+            { (activity as LoginActivity).onSuccessfulSignIn() },
+            { Log.e("AuthQuickstart", "Sign in failed", it) }
+        )
     }
 
     private fun isPasswordValid(text: Editable?): Boolean {

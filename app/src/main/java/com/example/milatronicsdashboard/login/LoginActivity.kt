@@ -25,13 +25,13 @@ class LoginActivity : AppCompatActivity() {
 
         Amplify.addPlugin(AWSCognitoAuthPlugin())
         Amplify.configure(applicationContext)
-        Amplify.Auth.fetchAuthSession({
-            Log.i("AmplifyQuickstart", "Auth session = $it")
-            if(it.isSignedIn){
-                startActivity(Intent(this, UserActivity::class.java))
-                finish()
-            }
-        },
+
+        Amplify.Auth.fetchAuthSession(
+            {
+                Log.i("AmplifyQuickstart", "Auth session = $it")
+                if(it.isSignedIn)
+                    onSuccessfulSignIn()
+            },
             { error -> Log.e("AmplifyQuickstart", "Failed to fetch auth session", error) }
         )
 
@@ -48,5 +48,20 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun onSuccessfulSignIn(){
+        Amplify.Auth.fetchUserAttributes(
+            { attributes ->
+                Log.i("AuthDemo", "SignIn successful. User attributes = $attributes")
+
+                val intent = Intent(this, UserActivity::class.java)
+                attributes.forEach{intent.putExtra(it.key.keyString, it.value)}
+                Log.i("AuthDemoLogin","${intent.extras}")
+                startActivity(intent)
+                finish()
+            },
+            { Log.e("AuthDemo", "Failed to fetch user attributes", it) }
+        )
     }
 }
