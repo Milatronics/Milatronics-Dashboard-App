@@ -11,8 +11,6 @@ import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentForgotPasswordBinding
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_forgot_password.*
-import kotlinx.android.synthetic.main.fragment_forgot_password.view.*
 
 // Fragment representing the forgot password screen
 class ForgotPasswordFragment : Fragment() {
@@ -28,17 +26,17 @@ class ForgotPasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set listeners for the buttons
-        binding.root.reset_button.setOnClickListener {
+        binding.resetButton.setOnClickListener {
             resetPassword()
         }
-        binding.root.cancel_button_reset_password.setOnClickListener {
+        binding.cancelButtonResetPassword.setOnClickListener {
             findNavController().navigate(R.id.action_forgotPasswordFragment_to_signInFragment)
         }
     }
 
     // Sends a password reset code to the user's email id.
     private fun resetPassword(){
-        val email = email_text_input_password_reset_edit_text.text.toString().trim()
+        val email = binding.emailTextInputPasswordResetEditText.text.toString().trim()
 
         Amplify.Auth.resetPassword(email,
             {

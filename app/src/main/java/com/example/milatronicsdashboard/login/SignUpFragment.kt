@@ -15,8 +15,6 @@ import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentSignUpBinding
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_sign_up.*
-import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 
 
 // Fragment representing the SignUp screen
@@ -33,17 +31,17 @@ class SignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set listeners for the buttons
-        binding.root.sign_up_button.setOnClickListener {
+        binding.signUpButton.setOnClickListener {
             signUp()
         }
-        binding.root.cancel_button_sign_up.setOnClickListener {
+        binding.cancelButtonSignUp.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
     // Clear the password length error once more than 8 characters are typed.
-        binding.root.password_edit_text_sign_up.setOnKeyListener { _, _, _ ->
-            if (isPasswordValid(password_edit_text_sign_up.text)) {
-                password_text_input_sign_up.error = null //Clear the error
+        binding.passwordEditTextSignUp.setOnKeyListener { _, _, _ ->
+            if (isPasswordValid(binding.passwordEditTextSignUp.text)) {
+                binding.passwordEditTextSignUp.error = null //Clear the error
             }
             false
         }
@@ -68,8 +66,8 @@ class SignUpFragment : Fragment() {
             Snackbar.make(binding.root, "Please enter a password.", Snackbar.LENGTH_SHORT).show()
             return
         }
-        if (!isPasswordValid(password_edit_text_sign_up.text)){
-            password_text_input_sign_up.error = getString(R.string.error_password)
+        if (!isPasswordValid(binding.passwordEditTextSignUp.text)){
+            binding.passwordTextInputSignUp.error = getString(R.string.error_password)
             return
         }
 

@@ -14,8 +14,6 @@ import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentSignInBinding
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_sign_in.*
-import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 
 
 // Fragment representing the main login screen for the users
@@ -32,23 +30,23 @@ class SignInFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set listeners for the buttons
-        binding.root.sign_in_button.setOnClickListener {
+        binding.signInButton.setOnClickListener {
             signIn()
         }
-        binding.root.google_sign_in_button.setOnClickListener {
+        binding.googleSignInButton.setOnClickListener {
             googleSignIn()
         }
-        binding.root.sign_up_now.setOnClickListener {
+        binding.signUpNow.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
-        binding.root.forgot_password.setOnClickListener {
+        binding.forgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
         }
 
         // Clear the password length error once more than 8 characters are typed.
-        binding.root.password_edit_text_sign_in.setOnKeyListener { _, _, _ ->
-            if (isPasswordValid(password_edit_text_sign_in.text)) {
-                password_text_input_sign_in.error = null //Clear the error
+        binding.passwordEditTextSignIn.setOnKeyListener { _, _, _ ->
+            if (isPasswordValid(binding.passwordEditTextSignIn.text)) {
+                binding.passwordEditTextSignIn.error = null //Clear the error
             }
             false
         }
@@ -56,12 +54,12 @@ class SignInFragment : Fragment() {
 
     // Confirms the password is valid and then attempts to sign in the user.
     private fun signIn(){
-        if (!isPasswordValid(password_edit_text_sign_in.text)) {
-            password_text_input_sign_in.error = getString(R.string.error_password)
+        if (!isPasswordValid(binding.passwordEditTextSignIn.text)) {
+            binding.passwordEditTextSignIn.error = getString(R.string.error_password)
         }
         else {
-            val email = email_text_edit_text.text.toString().trim()
-            val password = password_edit_text_sign_in.text.toString()
+            val email = binding.emailTextEditText.text.toString().trim()
+            val password = binding.passwordEditTextSignIn.text.toString()
 
             Amplify.Auth.signIn(email, password,
                 { result ->

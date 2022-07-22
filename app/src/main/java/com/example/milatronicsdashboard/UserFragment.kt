@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.databinding.FragmentUserBinding
 import com.example.milatronicsdashboard.login.LoginActivity
-import kotlinx.android.synthetic.main.fragment_user.*
 
 class UserFragment : Fragment() {
     private lateinit var binding: FragmentUserBinding
@@ -22,10 +21,10 @@ class UserFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
-        sign_out_button.setOnClickListener{
+        binding.signOutButton.setOnClickListener{
             signOut()
         }
-        textView.text = "Welcome " + (activity as UserActivity).name
+        binding.textView.text = "Welcome " + (activity as UserActivity).name
     }
 
     private fun signOut(){

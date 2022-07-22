@@ -12,7 +12,6 @@ import com.amplifyframework.core.Amplify
 import com.example.milatronicsdashboard.R
 import com.example.milatronicsdashboard.databinding.FragmentConfirmSignUpBinding
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.fragment_confirm_sign_up.view.*
 
 // Fragment representing the Sign Up Confirmation screen
 class ConfirmSignUpFragment : Fragment() {
@@ -28,10 +27,10 @@ class ConfirmSignUpFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Set listeners for the buttons
-        binding.root.confirmation_button.setOnClickListener {
+        binding.confirmationButton.setOnClickListener {
             confirmSignUp()
         }
-        binding.root.cancel_button_confirmation.setOnClickListener {
+        binding.cancelButtonConfirmation.setOnClickListener {
             findNavController().navigate(R.id.action_confirmSignUpFragment_to_signInFragment)
         }
     }
