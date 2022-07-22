@@ -11,6 +11,7 @@ class Milatronics: Application() {
     override fun onCreate() {
         super.onCreate()
 
+        // Initialize amplify.
         try {
             Amplify.addPlugin(AWSCognitoAuthPlugin())
             Amplify.configure(applicationContext)

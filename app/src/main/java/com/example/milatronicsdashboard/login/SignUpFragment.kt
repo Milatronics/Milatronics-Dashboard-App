@@ -19,9 +19,11 @@ import kotlinx.android.synthetic.main.fragment_sign_up.*
 import kotlinx.android.synthetic.main.fragment_sign_up.view.*
 
 
+// Fragment representing the SignUp screen
 class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
 
+    // Inflates and sets the fragment view to fragment_sign_up.xml
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,6 +32,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Set listeners for the buttons
         binding.root.sign_up_button.setOnClickListener {
             signUp()
         }
@@ -37,6 +40,7 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
+    // Clear the password length error once more than 8 characters are typed.
         binding.root.password_edit_text_sign_up.setOnKeyListener { _, _, _ ->
             if (isPasswordValid(password_edit_text_sign_up.text)) {
                 password_text_input_sign_up.error = null //Clear the error
@@ -45,8 +49,9 @@ class SignUpFragment : Fragment() {
         }
     }
 
+    // Confirms whether the User Details are valid, and then attempts to sign up the user
     private fun signUp(){
-        // Sign up
+        // Read the user details
         val name = binding.nameEditText.text.toString().trim()
         val email = binding.emailEditTextInputSignUp.text.toString().trim()
         val password = binding.passwordEditTextSignUp.text.toString()
@@ -85,6 +90,7 @@ class SignUpFragment : Fragment() {
                 }
             },
             {
+                // Handle the different possible sign up failures
                 try{
                     Log.e("AuthSignUp", "$it")
                     throw it
@@ -108,6 +114,7 @@ class SignUpFragment : Fragment() {
         )
     }
 
+    // Checks if the password is at least 8 characters long.
     private fun isPasswordValid(text: Editable?): Boolean {
         return text != null && text.length >= 8
     }

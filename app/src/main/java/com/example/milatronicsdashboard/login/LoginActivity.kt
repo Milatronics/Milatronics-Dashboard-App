@@ -15,6 +15,7 @@ import com.example.milatronicsdashboard.UserActivity
 import com.example.milatronicsdashboard.databinding.ActivityLoginBinding
 import com.google.android.material.snackbar.Snackbar
 
+// The host activity for the login fragments.
 class LoginActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityLoginBinding
@@ -23,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Checks if the user is already signed in
         Amplify.Auth.fetchAuthSession(
             {
                 Log.i("AuthFetchSession", "Auth session = $it")
@@ -35,9 +37,11 @@ class LoginActivity : AppCompatActivity() {
             }
         )
 
+        // Inflates and sets the current view.
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Sets up the actionbar and navigation controller
         setSupportActionBar(binding.toolbar)
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_content_login) as NavHostFragment
@@ -46,10 +50,12 @@ class LoginActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
+    // Gives functionality for navigating "back"
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+    // Launches the User Activity on a successful sign in
     fun onSuccessfulSignIn(){
         Amplify.Auth.fetchUserAttributes(
             { attributes ->

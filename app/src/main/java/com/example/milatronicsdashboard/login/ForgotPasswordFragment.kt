@@ -14,10 +14,11 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_forgot_password.*
 import kotlinx.android.synthetic.main.fragment_forgot_password.view.*
 
-
+// Fragment representing the forgot password screen
 class ForgotPasswordFragment : Fragment() {
     private lateinit var binding: FragmentForgotPasswordBinding
 
+    // Inflates and sets the fragment view to fragment_forgot_password.xml
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentForgotPasswordBinding.inflate(inflater, container, false)
         return binding.root
@@ -26,15 +27,17 @@ class ForgotPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Set listeners for the buttons
         binding.root.reset_button.setOnClickListener {
-            reset()
+            resetPassword()
         }
         binding.root.cancel_button_reset_password.setOnClickListener {
             findNavController().navigate(R.id.action_forgotPasswordFragment_to_signInFragment)
         }
     }
 
-    private fun reset(){
+    // Sends a password reset code to the user's email id.
+    private fun resetPassword(){
         val email = email_text_input_password_reset_edit_text.text.toString().trim()
 
         Amplify.Auth.resetPassword(email,

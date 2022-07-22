@@ -18,10 +18,11 @@ import kotlinx.android.synthetic.main.fragment_sign_in.*
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 
 
-// Fragment representing the login screen for the users
+// Fragment representing the main login screen for the users
 class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
 
+    // Inflates and sets the fragment view to fragment_sign_in.xml
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,6 +31,7 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Set listeners for the buttons
         binding.root.sign_in_button.setOnClickListener {
             signIn()
         }
@@ -42,7 +44,8 @@ class SignInFragment : Fragment() {
         binding.root.forgot_password.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
         }
-        // Clear the error once more than 8 characters are typed.
+
+        // Clear the password length error once more than 8 characters are typed.
         binding.root.password_edit_text_sign_in.setOnKeyListener { _, _, _ ->
             if (isPasswordValid(password_edit_text_sign_in.text)) {
                 password_text_input_sign_in.error = null //Clear the error
@@ -51,12 +54,16 @@ class SignInFragment : Fragment() {
         }
     }
 
+    // Confirms the password is valid and then attempts to sign in the user.
     private fun signIn(){
         if (!isPasswordValid(password_edit_text_sign_in.text)) {
             password_text_input_sign_in.error = getString(R.string.error_password)
-        } else {
-            password_text_input_sign_in.error = null
-            Amplify.Auth.signIn(email_text_edit_text.text.toString().trim(), password_edit_text_sign_in.text.toString(),
+        }
+        else {
+            val email = email_text_edit_text.text.toString().trim()
+            val password = password_edit_text_sign_in.text.toString()
+
+            Amplify.Auth.signIn(email, password,
                 { result ->
                     if (result.isSignInComplete) {
                         (activity as LoginActivity).onSuccessfulSignIn()
@@ -73,6 +80,7 @@ class SignInFragment : Fragment() {
         }
     }
 
+    // Perform sign in using Google
     private fun googleSignIn(){
         Amplify.Auth.signInWithSocialWebUI(
             AuthProvider.google(), activity as Activity,
@@ -86,6 +94,7 @@ class SignInFragment : Fragment() {
         )
     }
 
+    // Checks if the password is at least 8 characters long.
     private fun isPasswordValid(text: Editable?): Boolean {
         return text != null && text.length >= 8
     }
