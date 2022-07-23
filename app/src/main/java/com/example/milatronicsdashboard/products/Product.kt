@@ -7,5 +7,5 @@ data class Product(
     @StringRes val titleResourceId: Int,
     @DrawableRes val imageResourceId: Int,
     @StringRes val descriptionResourceId: Int,
-    @StringRes val advantagesResourceId: MutableList<Int>,
+//    @StringRes val advantagesResourceId: MutableList<Int>,
 )
