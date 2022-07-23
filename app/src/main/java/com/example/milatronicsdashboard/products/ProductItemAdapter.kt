@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.milatronicsdashboard.HomeFragmentDirections
 import com.example.milatronicsdashboard.R
 
 /** Adapter for the recycler view in home fragment. Displays [Product] data object */
@@ -34,6 +36,11 @@ class ProductItemAdapter(
         val product = productDataset[position]
         holder.titleTextView.text = context.resources.getString(product.titleResourceId)
         holder.imageView.setImageResource(product.imageResourceId)
+
+        holder.view.setOnClickListener{
+            val action = HomeFragmentDirections.actionHomeFragmentToProductFragment(product = product)
+            findNavController(holder.view).navigate(action)
+        }
     }
 
     override fun getItemCount() = productDataset.size

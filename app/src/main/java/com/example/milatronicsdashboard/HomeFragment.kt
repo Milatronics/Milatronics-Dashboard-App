@@ -17,14 +17,13 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        productDataset = ProductsDataSource().loadProducts()
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        productDataset = ProductsDataSource().loadProducts()
         binding.productsRecyclerView.adapter = ProductItemAdapter(activity as Context, productDataset)
         binding.productsRecyclerView.setHasFixedSize(true)
     }
