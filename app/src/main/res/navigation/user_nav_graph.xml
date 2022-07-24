@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/user_nav_graph"
-    app:startDestination="@id/userFragment">
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.milatronicsdashboard.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/to_productFragment"
+            app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allProductsFragment"
+            app:destination="@id/allProductsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="com.example.milatronicsdashboard.DevicesFragment"
+        android:label="fragment_devices"
+        tools:layout="@layout/fragment_devices" />
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.milatronicsdashboard.UserFragment"
-        android:label="UserFragment" />
+        android:label="UserFragment"
+        tools:layout="@layout/fragment_user"/>
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.example.milatronicsdashboard.products.ProductFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product" >
+        <argument
+            android:name="product"
+            app:argType="com.example.milatronicsdashboard.products.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/allProductsFragment"
+        android:name="com.example.milatronicsdashboard.products.AllProductsFragment"
+        android:label="fragment_all_products"
+        tools:layout="@layout/fragment_all_products" >
+        <action
+            android:id="@id/to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+
 </navigation>
