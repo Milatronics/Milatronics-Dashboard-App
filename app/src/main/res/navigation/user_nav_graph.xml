@@ -97,5 +97,10 @@
             android:name="tip"
             app:argType="com.example.milatronicsdashboard.shrimpfarmingtips.Tip" />
     </fragment>
+    <fragment
+        android:id="@+id/priceTrendsFragment"
+        android:name="com.example.milatronicsdashboard.PriceTrendsFragment"
+        android:label="fragment_price_trends"
+        tools:layout="@layout/fragment_price_trends" />
 
 </navigation>

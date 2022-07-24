@@ -52,4 +52,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.2.0'
     implementation 'com.amplifyframework:core:1.36.2'
     implementation 'com.amplifyframework:aws-auth-cognito:1.36.2'
+    implementation 'com.amplifyframework:aws-api:1.36.2'
 }
