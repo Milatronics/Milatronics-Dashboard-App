@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.milatronicsdashboard.HomeFragmentDirections
 import com.example.milatronicsdashboard.R
 
-/** Adapter for the recycler view in home fragment. Displays [Product] data object */
+/** Adapter for the recycler views in home and all items fragments. Displays [Product] data object */
 class ProductItemAdapter(
     private val context: Context,
     private val productDataset: List<Product>,
