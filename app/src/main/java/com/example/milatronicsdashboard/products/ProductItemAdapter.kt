@@ -38,7 +38,7 @@ class ProductItemAdapter(
         holder.titleTextView.text = context.resources.getString(product.titleResourceId)
         holder.imageView.setImageResource(product.imageResourceId)
         holder.view.setOnClickListener{
-            val action = HomeFragmentDirections.toProductFragment(product = product)
+            val action = HomeFragmentDirections.actionToProductFragment(product = product)
             findNavController(holder.view).navigate(action)
         }
         if(itemWidth != 0)

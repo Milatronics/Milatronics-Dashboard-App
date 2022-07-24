@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".shrimpdiseases.AllDiseasesFragment">
+    tools:context=".shrimpfarmingtips.AllTipsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,28 +12,28 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/shrimp_diseases_title_textview"
+            android:id="@+id/shrimp_farming_tips_title_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="@string/shrimp_diseases_title"
+            android:text="@string/shrimp_farming_tips_title"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/shrimp_diseases_desc_textview"
+            android:id="@+id/shrimp_farming_tips_desc_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="@string/shrimp_diseases_desc"
+            android:text="@string/shrimp_farming_tips_desc"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/shrimp_diseases_recycler_view"
+            android:id="@+id/shrimp_farming_tips_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:orientation="vertical"
             app:layoutManager="LinearLayoutManager"
             tools:itemCount="3"
-            tools:listitem="@layout/disease_item"/>
+            tools:listitem="@layout/tip_item"/>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

@@ -1,4 +1,4 @@
-package com.example.milatronicsdashboard.shrimpdiseases
+package com.example.milatronicsdashboard.shrimpfarmingtips
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,40 +10,41 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.milatronicsdashboard.HomeFragmentDirections
 import com.example.milatronicsdashboard.R
+import com.example.milatronicsdashboard.shrimpdiseases.Disease
 
 /** Adapter for the recycler views in home and all items fragments. Displays [Disease] data object */
-class DiseaseItemAdapter(
+class TipsItemAdapter(
     private val context: Context,
-    private val diseaseDataset: List<Disease>,
+    private val tipDataset: List<Tip>,
     private val itemWidth: Int = 0)
-    : RecyclerView.Adapter<DiseaseItemAdapter.DiseaseItemViewHolder>()
+    : RecyclerView.Adapter<TipsItemAdapter.TipItemViewHolder>()
 {
     // Provide a reference to the views for each data item in the viewGroup
-    class DiseaseItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-        val imageView: ImageView = view.findViewById(R.id.disease_item_image)
-        val titleTextView: TextView = view.findViewById(R.id.disease_item_title)
+    class TipItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+        val imageView: ImageView = view.findViewById(R.id.tip_item_image)
+        val titleTextView: TextView = view.findViewById(R.id.tip_item_title)
     }
 
     /** Create new views (invoked by the layout manager) */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiseaseItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TipItemViewHolder {
         // create a new view
         val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.disease_item, parent, false)
-        return DiseaseItemViewHolder(adapterLayout)
+            .inflate(R.layout.tip_item, parent, false)
+        return TipItemViewHolder(adapterLayout)
     }
 
     /** Replace the contents of a view (invoked by the layout manager) */
-    override fun onBindViewHolder(holder: DiseaseItemViewHolder, position: Int) {
-        val disease = diseaseDataset[position]
-        holder.titleTextView.text = context.resources.getString(disease.titleResourceId)
-        holder.imageView.setImageResource(disease.imageResourceId)
+    override fun onBindViewHolder(holder: TipItemViewHolder, position: Int) {
+        val tip = tipDataset[position]
+        holder.titleTextView.text = context.resources.getString(tip.titleResourceId)
+        holder.imageView.setImageResource(tip.imageResourceId)
         holder.view.setOnClickListener{
-            val action = HomeFragmentDirections.actionToDiseaseFragment(disease = disease)
+            val action = HomeFragmentDirections.actionToTipFragment(tip = tip)
             findNavController(holder.view).navigate(action)
         }
         if(itemWidth != 0)
             holder.view.layoutParams.width = itemWidth
     }
 
-    override fun getItemCount() = diseaseDataset.size
+    override fun getItemCount() = tipDataset.size
 }

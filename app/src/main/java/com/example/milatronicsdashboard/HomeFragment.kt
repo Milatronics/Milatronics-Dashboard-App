@@ -12,6 +12,8 @@ import com.example.milatronicsdashboard.products.ProductItemAdapter
 import com.example.milatronicsdashboard.products.ProductsDataSource
 import com.example.milatronicsdashboard.shrimpdiseases.DiseaseDataSource
 import com.example.milatronicsdashboard.shrimpdiseases.DiseaseItemAdapter
+import com.example.milatronicsdashboard.shrimpfarmingtips.TipsDataSource
+import com.example.milatronicsdashboard.shrimpfarmingtips.TipsItemAdapter
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -37,6 +39,13 @@ class HomeFragment : Fragment() {
         binding.diseasesRecyclerView.adapter = DiseaseItemAdapter(activity as Context, diseaseDataset, itemWidth)
         binding.viewAllDiseases.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allDiseasesFragment)
+        }
+
+        // Set up shrimp farming tips
+        val tipsDataset = TipsDataSource().loadProducts()
+        binding.tipsRecyclerView.adapter = TipsItemAdapter(activity as Context, tipsDataset, itemWidth)
+        binding.viewAllTips.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_allTipsFragment)
         }
     }
 }
