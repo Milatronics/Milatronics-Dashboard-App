@@ -25,6 +25,9 @@
     <string name="devices">Devices</string>
     <string name="stats">Stats</string>
 
+    <!--Home fragment strings-->
+    <string name="view_all">View All</string>
+
     <!--Product data-->
     <string name="our_products_title">Our Products</string>
     <string name="our_products_desc">We integrate sensors, mobile connectivity and decision tools for affordable aquaculture monitoring and automation. It helps farmers to monitor their ponds in a better way and reduce their investments to make it sustainable. cFog provides an array of parameters to let you know the present and future water quality of your pond. With cFog Pond automation unit you can setup alerts customized for your needs.</string>
@@ -35,6 +38,9 @@
     <string name="product_3_title">Smart feeder</string>
     <string name="product_3_description">Precise automatic feeder with Smart controls. Enabling you to monitor the feed for your fish with all of the latest technology. Adjusts the feed based on water quality and weather data, ensures that shrimp get correct amount of feed intelligently. Feeding schedules can be configured from smart-phone app. </string>
 
-    <!--Home fragment strings-->
-    <string name="view_all">View All</string>
+    <!--Shrimp Diseases data-->
+    <string name="shrimp_diseases_title">Shrimp Diseases</string>
+    <string name="shrimp_diseases_desc">Shrimp diseases description</string>
+    <string name="shrimp_farming_tips_title">Shrimp Farming Tips</string>
+    <string name="shrimp_farming_tips_desc">Shrimp farming tips description</string>
 </resources>

@@ -11,11 +11,23 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/to_productFragment"
+            android:id="@+id/action_to_productFragment"
             app:destination="@id/productFragment" />
         <action
             android:id="@+id/action_homeFragment_to_allProductsFragment"
             app:destination="@id/allProductsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allDiseasesFragment"
+            app:destination="@id/allDiseasesFragment" />
+        <action
+            android:id="@+id/action_to_diseaseFragment"
+            app:destination="@id/diseaseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allTipsFragment"
+            app:destination="@id/allTipsFragment" />
+        <action
+            android:id="@+id/action_to_tipFragment"
+            app:destination="@id/tipFragment" />
     </fragment>
     <fragment
         android:id="@+id/devicesFragment"
@@ -28,6 +40,16 @@
         android:label="UserFragment"
         tools:layout="@layout/fragment_user"/>
 
+
+    <fragment
+        android:id="@+id/allProductsFragment"
+        android:name="com.example.milatronicsdashboard.products.AllProductsFragment"
+        android:label="fragment_all_products"
+        tools:layout="@layout/fragment_all_products" >
+        <action
+            android:id="@id/action_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productFragment"
         android:name="com.example.milatronicsdashboard.products.ProductFragment"
@@ -37,14 +59,43 @@
             android:name="product"
             app:argType="com.example.milatronicsdashboard.products.Product" />
     </fragment>
+
     <fragment
-        android:id="@+id/allProductsFragment"
-        android:name="com.example.milatronicsdashboard.products.AllProductsFragment"
-        android:label="fragment_all_products"
-        tools:layout="@layout/fragment_all_products" >
+        android:id="@+id/allDiseasesFragment"
+        android:name="com.example.milatronicsdashboard.shrimpdiseases.AllDiseasesFragment"
+        android:label="AllDiseasesFragment"
+        tools:layout="@layout/fragment_all_diseases">
         <action
-            android:id="@id/to_productFragment"
-            app:destination="@id/productFragment" />
+            android:id="@id/action_to_diseaseFragment"
+            app:destination="@id/diseaseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diseaseFragment"
+        android:name="com.example.milatronicsdashboard.shrimpdiseases.DiseaseFragment"
+        android:label="DiseaseFragment"
+        tools:layout="@layout/fragment_disease">
+        <argument
+            android:name="disease"
+            app:argType="com.example.milatronicsdashboard.shrimpdiseases.Disease" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allTipsFragment"
+        android:name="com.example.milatronicsdashboard.shrimpfarmingtips.AllTipsFragment"
+        android:label="fragment_all_tips"
+        tools:layout="@layout/fragment_all_tips" >
+        <action
+            android:id="@id/action_to_tipFragment"
+            app:destination="@id/tipFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipFragment"
+        android:name="com.example.milatronicsdashboard.shrimpfarmingtips.TipFragment"
+        android:label="fragment_tip"
+        tools:layout="@layout/fragment_tip" >
+        <argument
+            android:name="tip"
+            app:argType="com.example.milatronicsdashboard.shrimpfarmingtips.Tip" />
     </fragment>
 
 </navigation>
