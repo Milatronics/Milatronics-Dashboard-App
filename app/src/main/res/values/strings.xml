@@ -26,11 +26,15 @@
     <string name="stats">Stats</string>
 
     <!--Product data-->
+    <string name="our_products_title">Our Products</string>
+    <string name="our_products_desc">We integrate sensors, mobile connectivity and decision tools for affordable aquaculture monitoring and automation. It helps farmers to monitor their ponds in a better way and reduce their investments to make it sustainable. cFog provides an array of parameters to let you know the present and future water quality of your pond. With cFog Pond automation unit you can setup alerts customized for your needs.</string>
     <string name="product_1_title">Pond Meter</string>
     <string name="product_1_description">Real-time monitoring of ponds with intelligent control of aerators and feeders, reduces production costs and increases yield and make it sustainable. Significantly reduces the risk for farmer and helps him to increase productivity</string>
-    <string name="product_2_title">Aerators Controller</string>
+    <string name="product_2_title">Aerators</string>
     <string name="product_2_description">Automatic control of aerators based on DO levels reduces energy bills by 20%.</string>
     <string name="product_3_title">Smart feeder</string>
     <string name="product_3_description">Precise automatic feeder with Smart controls. Enabling you to monitor the feed for your fish with all of the latest technology. Adjusts the feed based on water quality and weather data, ensures that shrimp get correct amount of feed intelligently. Feeding schedules can be configured from smart-phone app. </string>
 
+    <!--Home fragment strings-->
+    <string name="view_all">View All</string>
 </resources>

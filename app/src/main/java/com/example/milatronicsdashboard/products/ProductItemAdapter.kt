@@ -14,7 +14,8 @@ import com.example.milatronicsdashboard.R
 /** Adapter for the recycler view in home fragment. Displays [Product] data object */
 class ProductItemAdapter(
     private val context: Context,
-    private val productDataset: List<Product>)
+    private val productDataset: List<Product>,
+    private val itemWidth: Int = 0)
     : RecyclerView.Adapter<ProductItemAdapter.ProductItemViewHolder>()
 {
     // Provide a reference to the views for each data item in the viewGroup
@@ -36,11 +37,12 @@ class ProductItemAdapter(
         val product = productDataset[position]
         holder.titleTextView.text = context.resources.getString(product.titleResourceId)
         holder.imageView.setImageResource(product.imageResourceId)
-
         holder.view.setOnClickListener{
-            val action = HomeFragmentDirections.actionHomeFragmentToProductFragment(product = product)
+            val action = HomeFragmentDirections.toProductFragment(product = product)
             findNavController(holder.view).navigate(action)
         }
+        if(itemWidth != 0)
+            holder.view.layoutParams.width = itemWidth
     }
 
     override fun getItemCount() = productDataset.size

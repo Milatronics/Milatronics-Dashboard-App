@@ -11,8 +11,11 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_productFragment"
+            android:id="@+id/to_productFragment"
             app:destination="@id/productFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allProductsFragment"
+            app:destination="@id/allProductsFragment" />
     </fragment>
     <fragment
         android:id="@+id/devicesFragment"
@@ -33,6 +36,15 @@
         <argument
             android:name="product"
             app:argType="com.example.milatronicsdashboard.products.Product" />
+    </fragment>
+    <fragment
+        android:id="@+id/allProductsFragment"
+        android:name="com.example.milatronicsdashboard.products.AllProductsFragment"
+        android:label="fragment_all_products"
+        tools:layout="@layout/fragment_all_products" >
+        <action
+            android:id="@id/to_productFragment"
+            app:destination="@id/productFragment" />
     </fragment>
 
 </navigation>

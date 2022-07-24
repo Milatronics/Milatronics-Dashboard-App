@@ -10,20 +10,22 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/product_item_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            tools:text="Product Title" />
         <ImageView
             android:id="@+id/product_item_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:paddingBottom="16dp"
+            android:layout_height="180dp"
+            android:paddingTop="8dp"
             android:importantForAccessibility="no"
             android:scaleType="fitCenter"
             tools:src="@drawable/product_3_img"/>
+
+        <TextView
+            android:id="@+id/product_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            tools:text="Product Title" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
