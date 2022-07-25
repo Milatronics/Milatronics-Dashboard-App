@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_price_trends.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_product.xml" value="0.1933295647258338" />
         <entry key="app/src/main/res/layout/fragment_scrolling.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.35625" />
@@ -31,6 +32,7 @@
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_tip.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.2341485507246377" />
+        <entry key="app/src/main/res/layout/location_menu_item.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/login_fragment2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/product_item.xml" value="0.25" />

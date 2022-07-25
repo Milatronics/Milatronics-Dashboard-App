@@ -46,5 +46,6 @@
     <string name="shrimp_farming_tips_title">Shrimp Farming Tips</string>
     <string name="shrimp_farming_tips_desc">Shrimp farming tips description</string>
     <string name="prices">Prices</string>
+    <string name="no_data_found">No data found for selected area.</string>
 
 </resources>

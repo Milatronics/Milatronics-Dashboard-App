@@ -19,17 +19,17 @@ import com.amplifyframework.core.model.query.predicate.QueryField;
 
 import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 
-/** This is an auto generated class representing the MarketPrices type in your schema. */
+/** This is an auto generated class representing the MarketPrice type in your schema. */
 @SuppressWarnings("all")
 @ModelConfig(pluralName = "MarketPrices", authRules = {
   @AuthRule(allow = AuthStrategy.PUBLIC, operations = { ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE, ModelOperation.READ })
 })
-public final class MarketPrices implements Model {
-  public static final QueryField ID = field("MarketPrices", "id");
-  public static final QueryField DATE = field("MarketPrices", "Date");
-  public static final QueryField LOCATION = field("MarketPrices", "Location");
-  public static final QueryField COUNT = field("MarketPrices", "Count");
-  public static final QueryField PRICE = field("MarketPrices", "Price");
+public final class MarketPrice implements Model {
+  public static final QueryField ID = field("MarketPrice", "id");
+  public static final QueryField DATE = field("MarketPrice", "Date");
+  public static final QueryField LOCATION = field("MarketPrice", "Location");
+  public static final QueryField COUNT = field("MarketPrice", "Count");
+  public static final QueryField PRICE = field("MarketPrice", "Price");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="AWSDate") Temporal.Date Date;
   private final @ModelField(targetType="String") String Location;
@@ -65,7 +65,7 @@ public final class MarketPrices implements Model {
       return updatedAt;
   }
   
-  private MarketPrices(String id, Temporal.Date Date, String Location, Integer Count, Double Price) {
+  private MarketPrice(String id, Temporal.Date Date, String Location, Integer Count, Double Price) {
     this.id = id;
     this.Date = Date;
     this.Location = Location;
@@ -80,14 +80,14 @@ public final class MarketPrices implements Model {
       } else if(obj == null || getClass() != obj.getClass()) {
         return false;
       } else {
-      MarketPrices marketPrices = (MarketPrices) obj;
-      return ObjectsCompat.equals(getId(), marketPrices.getId()) &&
-              ObjectsCompat.equals(getDate(), marketPrices.getDate()) &&
-              ObjectsCompat.equals(getLocation(), marketPrices.getLocation()) &&
-              ObjectsCompat.equals(getCount(), marketPrices.getCount()) &&
-              ObjectsCompat.equals(getPrice(), marketPrices.getPrice()) &&
-              ObjectsCompat.equals(getCreatedAt(), marketPrices.getCreatedAt()) &&
-              ObjectsCompat.equals(getUpdatedAt(), marketPrices.getUpdatedAt());
+      MarketPrice marketPrice = (MarketPrice) obj;
+      return ObjectsCompat.equals(getId(), marketPrice.getId()) &&
+              ObjectsCompat.equals(getDate(), marketPrice.getDate()) &&
+              ObjectsCompat.equals(getLocation(), marketPrice.getLocation()) &&
+              ObjectsCompat.equals(getCount(), marketPrice.getCount()) &&
+              ObjectsCompat.equals(getPrice(), marketPrice.getPrice()) &&
+              ObjectsCompat.equals(getCreatedAt(), marketPrice.getCreatedAt()) &&
+              ObjectsCompat.equals(getUpdatedAt(), marketPrice.getUpdatedAt());
       }
   }
   
@@ -108,7 +108,7 @@ public final class MarketPrices implements Model {
   @Override
    public String toString() {
     return new StringBuilder()
-      .append("MarketPrices {")
+      .append("MarketPrice {")
       .append("id=" + String.valueOf(getId()) + ", ")
       .append("Date=" + String.valueOf(getDate()) + ", ")
       .append("Location=" + String.valueOf(getLocation()) + ", ")
@@ -132,8 +132,8 @@ public final class MarketPrices implements Model {
    * @param id the id of the existing item this instance will represent
    * @return an instance of this model with only ID populated
    */
-  public static MarketPrices justId(String id) {
-    return new MarketPrices(
+  public static MarketPrice justId(String id) {
+    return new MarketPrice(
       id,
       null,
       null,
@@ -150,7 +150,7 @@ public final class MarketPrices implements Model {
       Price);
   }
   public interface BuildStep {
-    MarketPrices build();
+    MarketPrice build();
     BuildStep id(String id);
     BuildStep date(Temporal.Date date);
     BuildStep location(String location);
@@ -166,10 +166,10 @@ public final class MarketPrices implements Model {
     private Integer Count;
     private Double Price;
     @Override
-     public MarketPrices build() {
+     public MarketPrice build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
         
-        return new MarketPrices(
+        return new MarketPrice(
           id,
           Date,
           Location,

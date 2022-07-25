@@ -1,0 +1,43 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateMarketPrice {
+  onCreateMarketPrice {
+    id
+    Date
+    Location
+    Count
+    Price
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnUpdateMarketPrice {
+  onUpdateMarketPrice {
+    id
+    Date
+    Location
+    Count
+    Price
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+subscription OnDeleteMarketPrice {
+  onDeleteMarketPrice {
+    id
+    Date
+    Location
+    Count
+    Price
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}

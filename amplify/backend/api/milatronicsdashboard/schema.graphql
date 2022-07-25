@@ -1,8 +1,7 @@
-type MarketPrices @model @auth(rules: [{allow: public}]) {
+type MarketPrice @model @auth(rules: [{allow: public}]) {
   id: ID!
   Date: AWSDate
   Location: String
   Count: Int
   Price: Float
-}
- 
+} 

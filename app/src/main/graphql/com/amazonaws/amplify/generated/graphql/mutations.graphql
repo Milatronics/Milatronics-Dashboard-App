@@ -1,0 +1,52 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateMarketPrice(
+  $input: CreateMarketPriceInput!
+  $condition: ModelMarketPriceConditionInput
+) {
+  createMarketPrice(input: $input, condition: $condition) {
+    id
+    Date
+    Location
+    Count
+    Price
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation UpdateMarketPrice(
+  $input: UpdateMarketPriceInput!
+  $condition: ModelMarketPriceConditionInput
+) {
+  updateMarketPrice(input: $input, condition: $condition) {
+    id
+    Date
+    Location
+    Count
+    Price
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
+mutation DeleteMarketPrice(
+  $input: DeleteMarketPriceInput!
+  $condition: ModelMarketPriceConditionInput
+) {
+  deleteMarketPrice(input: $input, condition: $condition) {
+    id
+    Date
+    Location
+    Count
+    Price
+    createdAt
+    updatedAt
+    _version
+    _deleted
+    _lastChangedAt
+  }
+}
