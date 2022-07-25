@@ -47,10 +47,8 @@ class ConfirmSignUpFragment : Fragment() {
                 if (result.isSignUpComplete) {
                     Log.i("AuthConfirmSignUp", "Confirm signUp succeeded")
                     Snackbar.make(binding.root, "Sign up successful.", Snackbar.LENGTH_SHORT).show()
-                    try {
+                    activity?.runOnUiThread{
                         findNavController().navigate(R.id.action_confirmSignUpFragment_to_signInFragment)
-                    } catch (e: IllegalStateException) {
-                        Log.e("AuthConfirmSignUp", "$e")
                     }
                 }
                 else {

@@ -49,5 +49,7 @@
     <string name="no_data_found">No data found for selected area.</string>
     <string name="count">Count</string>
     <string name="today_s_price">Today\'s Price</string>
+    <string name="location">Location</string>
+    <string name="price_trends">Price Trends</string>
 
 </resources>

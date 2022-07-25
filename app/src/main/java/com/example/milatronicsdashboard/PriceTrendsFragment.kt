@@ -45,7 +45,8 @@ class PriceTrendsFragment : Fragment() {
         clearTable()
         displayNoData()
 
-        Amplify.API.query(ModelQuery.list(MarketPrice::class.java, MarketPrice.LOCATION.eq(location)),
+        Amplify.API.query(
+            ModelQuery.list(MarketPrice::class.java, MarketPrice.LOCATION.eq(location)),
             {displayData(it.data)},
             {Log.e("API", "Query failed", it)}
         )
@@ -53,8 +54,10 @@ class PriceTrendsFragment : Fragment() {
 
     private fun displayData(data: PaginatedResult<MarketPrice>){
         activity?.runOnUiThread{
-            clearTable()
-            data.forEach{ marketPrice ->
+            if(!data.items.none())
+                clearTable()
+
+            data.sortedByDescending {it.count}.forEach{ marketPrice ->
                 Log.i("API", "$marketPrice")
 
                 val count = TextView(requireContext())

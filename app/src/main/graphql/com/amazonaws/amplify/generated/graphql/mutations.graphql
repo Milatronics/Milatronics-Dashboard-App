@@ -11,9 +11,6 @@ mutation CreateMarketPrice(
     Price
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
 mutation UpdateMarketPrice(
@@ -28,9 +25,6 @@ mutation UpdateMarketPrice(
     Price
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
 mutation DeleteMarketPrice(
@@ -45,8 +39,5 @@ mutation DeleteMarketPrice(
     Price
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }

@@ -8,9 +8,6 @@ subscription OnCreateMarketPrice {
     Price
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
 subscription OnUpdateMarketPrice {
@@ -22,9 +19,6 @@ subscription OnUpdateMarketPrice {
     Price
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
 subscription OnDeleteMarketPrice {
@@ -36,8 +30,5 @@ subscription OnDeleteMarketPrice {
     Price
     createdAt
     updatedAt
-    _version
-    _deleted
-    _lastChangedAt
   }
 }
