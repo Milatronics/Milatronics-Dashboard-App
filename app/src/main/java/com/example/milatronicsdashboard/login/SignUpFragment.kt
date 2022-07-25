@@ -80,11 +80,9 @@ class SignUpFragment : Fragment() {
             {
                 Log.i("AuthSignUp", "Sign up succeeded: $it")
                 Snackbar.make(binding.root, "Verification code sent to $email.", Snackbar.LENGTH_SHORT).show()
-                try {
+                activity?.runOnUiThread{
                     val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(emailId = email)
                     findNavController().navigate(action)
-                } catch (e: IllegalStateException) {
-                    Log.e("AuthSignUp", "$e")
                 }
             },
             {
@@ -95,11 +93,9 @@ class SignUpFragment : Fragment() {
                 }
                 catch (e: AuthException.UsernameExistsException) {
                     Snackbar.make(binding.root, "Account already exists.", Snackbar.LENGTH_SHORT).show()
-                    try {
+                    activity?.runOnUiThread{
                         val action = SignUpFragmentDirections.actionSignUpFragmentToConfirmSignUpFragment(emailId = email)
                         findNavController().navigate(action)
-                    } catch (e: IllegalStateException) {
-                        Log.e("AuthSignUp", "$e")
                     }
                 }
                 catch (e: AuthException.InvalidParameterException) {
