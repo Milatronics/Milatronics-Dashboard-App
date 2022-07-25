@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.amplifyframework.api.graphql.PaginatedResult
 import com.amplifyframework.api.graphql.model.ModelQuery
 import com.amplifyframework.core.Amplify
 import com.amplifyframework.datastore.generated.model.MarketPrice
@@ -43,30 +44,35 @@ class PriceTrendsFragment : Fragment() {
     private fun fetchPrices(location: String){
         clearTable()
         displayNoData()
-        Amplify.API.query(
-            ModelQuery.list(MarketPrice::class.java, MarketPrice.LOCATION.eq(location)),
-            {response ->
-//                clearTable()
-                response.data.forEach { marketPrice ->
-                    Log.i("API", "$marketPrice")
 
-//                    val count = TextView(requireContext())
-//                    count.text = marketPrice.count.toString()
-//                    count.textAlignment = TEXT_ALIGNMENT_CENTER
-//
-//                    val price = TextView(requireContext())
-//                    price.text = String.format("%.2f", marketPrice.price)
-//                    price.textAlignment = TEXT_ALIGNMENT_CENTER
-//
-//                    val newRow = TableRow(requireContext())
-//                    newRow.addView(count)
-//                    newRow.addView(price)
-//
-//                    binding.pricesTableLayout.addView(newRow)
-                }
-            },
-            { Log.e("API", "Query failed", it) }
+        Amplify.API.query(ModelQuery.list(MarketPrice::class.java, MarketPrice.LOCATION.eq(location)),
+            {displayData(it.data)},
+            {Log.e("API", "Query failed", it)}
         )
+    }
+
+    private fun displayData(data: PaginatedResult<MarketPrice>){
+        activity?.runOnUiThread{
+            clearTable()
+            data.forEach{ marketPrice ->
+                Log.i("API", "$marketPrice")
+
+                val count = TextView(requireContext())
+                count.text = marketPrice.count.toString()
+                count.textAlignment = TEXT_ALIGNMENT_CENTER
+
+                val price = TextView(requireContext())
+                price.text = String.format("\u20B9 %.2f", marketPrice.price)
+                price.textAlignment = TEXT_ALIGNMENT_CENTER
+
+                val newRow = TableRow(requireContext())
+                newRow.setPadding(0, 8, 0, 8)
+                newRow.addView(count)
+                newRow.addView(price)
+
+                binding.pricesTableLayout.addView(newRow)
+            }
+        }
     }
 
     private fun displayNoData(){

@@ -41,15 +41,13 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:text="Count"
-                    android:textAlignment="center"
-                    tools:ignore="HardcodedText" />
+                    android:text="@string/count"
+                    android:textAlignment="center" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:text="Today's Price"
-                    android:textAlignment="center"
-                    tools:ignore="HardcodedText" />
+                    android:text="@string/today_s_price"
+                    android:textAlignment="center" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
