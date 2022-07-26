@@ -10,14 +10,19 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.milatronicsdashboard.HomeFragmentDirections
 import com.example.milatronicsdashboard.R
+import com.example.milatronicsdashboard.products.ProductItemAdapter
 
 /** Adapter for the recycler views in home and all items fragments. Displays [Disease] data object */
 class DiseaseItemAdapter(
     private val context: Context,
     private val diseaseDataset: List<Disease>,
-    private val itemWidth: Int = 0)
+    private val isHorizontal: Boolean = false)
     : RecyclerView.Adapter<DiseaseItemAdapter.DiseaseItemViewHolder>()
 {
+    companion object{
+        const val WIDTH = 230
+        const val HEIGHT = 230
+    }
     // Provide a reference to the views for each data item in the viewGroup
     class DiseaseItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val imageView: ImageView = view.findViewById(R.id.disease_item_image)
@@ -41,8 +46,11 @@ class DiseaseItemAdapter(
             val action = HomeFragmentDirections.actionToDiseaseFragment(disease = disease)
             findNavController(holder.view).navigate(action)
         }
-        if(itemWidth != 0)
-            holder.view.layoutParams.width = itemWidth
+
+        if(isHorizontal){
+            holder.view.layoutParams.width = ProductItemAdapter.WIDTH
+            holder.imageView.layoutParams.height = ProductItemAdapter.HEIGHT
+        }
     }
 
     override fun getItemCount() = diseaseDataset.size

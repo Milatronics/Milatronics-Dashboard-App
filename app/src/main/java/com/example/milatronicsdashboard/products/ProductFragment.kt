@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.milatronicsdashboard.databinding.FragmentProductBinding
+
 
 class ProductFragment : Fragment() {
     private lateinit var binding: FragmentProductBinding
@@ -23,8 +25,9 @@ class ProductFragment : Fragment() {
         val args: ProductFragmentArgs by navArgs()
         product = args.product
 
-        binding.productTitle.text = context?.resources?.getString(product.titleResourceId)
+        (activity as AppCompatActivity).supportActionBar?.title = getString(product.titleResourceId)
+        binding.productTitle.text = getString(product.titleResourceId)
         binding.productImage.setImageResource(product.imageResourceId)
-        binding.productDescription.text = context?.resources?.getString(product.descriptionResourceId)
+        binding.productDescription.text = getString(product.descriptionResourceId)
     }
 }

@@ -43,7 +43,7 @@ class ForgotPasswordFragment : Fragment() {
                 Log.i("AuthPasswordReset", "Password reset OK: $it")
                 Snackbar.make(binding.root, "Password reset code sent to $email", Snackbar.LENGTH_SHORT).show()
                 activity?.runOnUiThread{
-                    findNavController().navigate(R.id.action_forgotPasswordFragment_to_signInFragment)
+                    findNavController().navigate(R.id.action_forgotPasswordFragment_to_confirmResetPasswordFragment)
                 }
             },
             {

@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.milatronicsdashboard.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_to_productFragment"
             app:destination="@id/productFragment" />
@@ -32,20 +32,20 @@
     <fragment
         android:id="@+id/devicesFragment"
         android:name="com.example.milatronicsdashboard.DevicesFragment"
-        android:label="fragment_devices"
+        android:label="@string/devices"
         tools:layout="@layout/fragment_devices" />
     <fragment
         android:id="@+id/userFragment"
         android:name="com.example.milatronicsdashboard.UserFragment"
-        android:label="UserFragment"
-        tools:layout="@layout/fragment_user"/>
+        android:label="User"
+        tools:layout="@layout/fragment_user" />
 
 
     <fragment
         android:id="@+id/allProductsFragment"
         android:name="com.example.milatronicsdashboard.products.AllProductsFragment"
-        android:label="fragment_all_products"
-        tools:layout="@layout/fragment_all_products" >
+        android:label="@string/our_products_title"
+        tools:layout="@layout/fragment_all_products">
         <action
             android:id="@id/action_to_productFragment"
             app:destination="@id/productFragment" />
@@ -63,7 +63,7 @@
     <fragment
         android:id="@+id/allDiseasesFragment"
         android:name="com.example.milatronicsdashboard.shrimpdiseases.AllDiseasesFragment"
-        android:label="AllDiseasesFragment"
+        android:label="@string/shrimp_diseases_title"
         tools:layout="@layout/fragment_all_diseases">
         <action
             android:id="@id/action_to_diseaseFragment"
@@ -82,8 +82,8 @@
     <fragment
         android:id="@+id/allTipsFragment"
         android:name="com.example.milatronicsdashboard.shrimpfarmingtips.AllTipsFragment"
-        android:label="fragment_all_tips"
-        tools:layout="@layout/fragment_all_tips" >
+        android:label="@string/shrimp_farming_tips_title"
+        tools:layout="@layout/fragment_all_tips">
         <action
             android:id="@id/action_to_tipFragment"
             app:destination="@id/tipFragment" />
@@ -100,7 +100,7 @@
     <fragment
         android:id="@+id/priceTrendsFragment"
         android:name="com.example.milatronicsdashboard.PriceTrendsFragment"
-        android:label="fragment_price_trends"
+        android:label="Price Trends"
         tools:layout="@layout/fragment_price_trends" />
 
 </navigation>
