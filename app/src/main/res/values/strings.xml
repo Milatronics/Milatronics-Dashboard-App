@@ -7,18 +7,18 @@
     <string name="password">Password</string>
     <string name="milatronics_login_logo_desc">Milatronics Login Page</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
-    <string name="title_activity_login">Milatronics Dashboard</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="nameRequired">Name</string>
-    <string name="enter_verification_code">6-Digit Verification Code</string>
-    <string name="confirm">Confirm</string>
     <string name="forgot_password">Forgot Password?</string>
-    <string name="enter_your_email_id">Enter your email id</string>
-    <string name="reset_password">Reset Password</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up_now">Sign Up Now</string>
     <string name="or">OR</string>
+    <string name="enter_your_email_id">Enter your email id</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="enter_verification_code">6-Digit Verification Code</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="confirm">Confirm</string>
 
     <!--Bottom Navigation Menu-->
     <string name="home">Home</string>
@@ -53,5 +53,6 @@
     <string name="count">Count</string>
     <string name="today_s_price">Today\'s Price</string>
     <string name="no_data_found">No data found for selected area.</string>
+
 
 </resources>

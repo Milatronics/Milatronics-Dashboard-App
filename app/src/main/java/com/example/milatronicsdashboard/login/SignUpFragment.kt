@@ -38,10 +38,10 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
-    // Clear the password length error once more than 8 characters are typed.
+        // Clear the password length error once more than 8 characters are typed.
         binding.passwordEditTextSignUp.setOnKeyListener { _, _, _ ->
             if (isPasswordValid(binding.passwordEditTextSignUp.text)) {
-                binding.passwordEditTextSignUp.error = null //Clear the error
+                binding.passwordTextInputSignUp.error = null //Clear the error
             }
             false
         }

@@ -19,6 +19,7 @@
         <entry key="app/src/main/res/layout/fragment_all_diseases.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_all_products.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_all_tips.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_confirm_reset_password.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/fragment_confirm_sign_up.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_devices.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.35625" />
