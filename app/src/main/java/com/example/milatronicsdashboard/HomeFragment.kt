@@ -17,7 +17,7 @@ import com.example.milatronicsdashboard.shrimpfarmingtips.TipsItemAdapter
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private val itemWidth = 250 // Width of the material design card items
+    private val isHorizontal = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -29,21 +29,21 @@ class HomeFragment : Fragment() {
 
         // Set up products
         val productDataset = ProductsDataSource().loadProducts()
-        binding.productsRecyclerView.adapter = ProductItemAdapter(activity as Context, productDataset, itemWidth)
+        binding.productsRecyclerView.adapter = ProductItemAdapter(activity as Context, productDataset, isHorizontal)
         binding.viewAllProducts.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allProductsFragment)
         }
 
         // Set up shrimp diseases
         val diseaseDataset = DiseaseDataSource().loadProducts()
-        binding.diseasesRecyclerView.adapter = DiseaseItemAdapter(activity as Context, diseaseDataset, itemWidth)
+        binding.diseasesRecyclerView.adapter = DiseaseItemAdapter(activity as Context, diseaseDataset, isHorizontal)
         binding.viewAllDiseases.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allDiseasesFragment)
         }
 
         // Set up shrimp farming tips
         val tipsDataset = TipsDataSource().loadProducts()
-        binding.tipsRecyclerView.adapter = TipsItemAdapter(activity as Context, tipsDataset, itemWidth)
+        binding.tipsRecyclerView.adapter = TipsItemAdapter(activity as Context, tipsDataset, isHorizontal)
         binding.viewAllTips.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allTipsFragment)
         }
