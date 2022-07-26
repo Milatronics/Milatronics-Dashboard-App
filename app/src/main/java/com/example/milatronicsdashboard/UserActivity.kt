@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.amplifyframework.auth.AuthUserAttributeKey
 import com.example.milatronicsdashboard.databinding.ActivityUserBinding
@@ -13,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 class UserActivity : AppCompatActivity(){
     private lateinit var binding: ActivityUserBinding
     private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var name: String
     lateinit var email: String
 
@@ -35,9 +38,14 @@ class UserActivity : AppCompatActivity(){
 
         // Set up the bottom navigation bar to use the NavController.
         binding.bottomNavigationBar.setupWithNavController(navController)
+
+        // Set up top toolbar
+        setSupportActionBar(binding.userToolbar)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.priceTrendsFragment, R.id.devicesFragment, R.id.userFragment))
+        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
-
+    // Gives functionality for navigating "back"
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }

@@ -28,8 +28,8 @@ class PriceTrendsFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onResume() {
+        super.onResume()
 
         // Set up the locations drop down menu
         val adapter = ArrayAdapter(requireContext(), R.layout.location_menu_item, LOCATIONS)
