@@ -13,7 +13,7 @@
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
-        <entry key="app/src/main/res/layout/activity_user.xml" value="0.2341485507246377" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.5" />
         <entry key="app/src/main/res/layout/content_login.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/disease_item.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_all_diseases.xml" value="0.35625" />

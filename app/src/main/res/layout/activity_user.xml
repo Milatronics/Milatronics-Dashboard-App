@@ -24,9 +24,17 @@ tools:context=".UserActivity">
                 android:id="@+id/user_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white"
-                app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:popupTheme="@style/Theme.MilatronicsDashboard.PopupOverlay" />
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/Theme.MilatronicsDashboard.PopupOverlay">
+
+                <ImageView
+                    android:layout_width="190dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/milatronics_logo_detailed" />
+            </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
