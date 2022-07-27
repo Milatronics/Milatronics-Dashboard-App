@@ -7,17 +7,28 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".UserActivity">
 
+    <ImageButton
+        android:id="@+id/buttonLogo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/long_logo_75"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageButton>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogo"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:navGraph="@navigation/user_nav_graph" />
+
+        <!-- app:layout_constraintTop_toTopOf="parent"-->
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/snackbar_layout"
