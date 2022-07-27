@@ -16,10 +16,10 @@
         <ImageView
             android:id="@+id/tip_item_image"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="260dp"
             android:importantForAccessibility="no"
             android:scaleType="fitCenter"
-            tools:src="@drawable/product_1_img"/>
+            tools:src="@drawable/tip_2_img"/>
 
         <TextView
             android:id="@+id/tip_item_title"

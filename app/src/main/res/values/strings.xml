@@ -288,8 +288,28 @@
     <!-- Shrimp farming Tips-->
     <string name="shrimp_farming_tips_title">Shrimp Farming Tips</string>
     <string name="shrimp_farming_tips_desc">Shrimp farming tips description</string>
+	<string name="tip_1_title">Tip 1</string>
+	<string name="tip_1_description"> </string>
+	<string name="tip_2_title">Tip 2</string>
+	<string name="tip_2_description">In shrimp farming, maintaining proper biosecurity is crucial to prevent spread of diseases. Some simple biosecurity measures which you can follow are given.</string>
+	<string name="tip_3_title">Tip 3</string>
+	<string name="tip_3_description">Maintain optimum alkalinity levels as it directly affects pH fluctuation and bacterial composition. Maintaining alkalinity between 120 ppm and 150 ppm is recommended. </string>
+	<string name="tip_4_title">Tip 4</string>
+	<string name="tip_4_description">Shrimp ponds receive large volumes of nutrients from feed, potentially resulting in harmful algal blooms. Increase the water exchange rate if the algal population starts increasing. </string>
+	<string name="tip_5_title">Tip 5</string>
+	<string name="tip_5_description">Before every cycle, make sure that all your measurement tools such as dissolved oxygen meter, pH meter, refractometer etc are calibrated to reduce errors and get more accurate data</string>
+	<string name="tip_6_title">Tip 6</string>
+	<string name="tip_6_description">Before stocking, Post-Larvae from hatcheries should be checked regularly for optimal growth and signs of diseases. Shrimp health should also be assessed once a week after stocking. </string>
+	<string name="tip_7_title">Tip 7</string>
+	<string name="tip_7_description">It is recommended to take shrimp samples every five to seven days, to allow farmers to understand shrimp growth and adjust the feed regime, preventing overfeeding and underfeeding. </string>
+	<string name="tip_8_title">Tip 8</string>
+	<string name="tip_8_description">Moulting is crucial growing phase where we should ensure the shrimps have sufficient nutrients. Keep track of the moulting  phase the shrimp is in by taking regular samples and prepare accordingly.</string>
+	<string name="tip_9_title">Tip 9</string>
+	<string name="tip_9_description">Apply probiotics at the beginning of the cycle and during stressful situations for the shrimps.</string>
+	<string name="tip_10_title">Tip 10</string>
+	<string name="tip_10_description">Stocking Post-Larvae(PL) from hatcheries directly to the farm is risky as PLs have a relatively weaker immune system. Implementing a nursery phase helps enhance the immune systems of the PLs before the grow-out period. </string>
 
-    <!-- Pricing Fragment Strings-->
+	<!-- Pricing Fragment Strings-->
     <string name="price_trends">Price Trends</string>
     <string name="location">Location</string>
     <string name="count">Count</string>

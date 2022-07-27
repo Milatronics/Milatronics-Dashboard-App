@@ -20,8 +20,8 @@ class TipsItemAdapter(
     : RecyclerView.Adapter<TipsItemAdapter.TipItemViewHolder>()
 {
     companion object{
-        const val WIDTH = 200
-        const val HEIGHT = 200
+        const val WIDTH = 270
+        const val HEIGHT = 180
     }
     // Provide a reference to the views for each data item in the viewGroup
     class TipItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
