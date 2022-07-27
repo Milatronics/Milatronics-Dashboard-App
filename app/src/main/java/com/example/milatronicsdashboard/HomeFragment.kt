@@ -47,10 +47,11 @@ class HomeFragment : Fragment() {
         handler = Handler(Looper.myLooper()!!)
         imageList = ArrayList()
 
-        imageList.add(R.drawable.long_logo_75)
-        imageList.add(R.drawable.long_logo_75)
-        imageList.add(R.drawable.long_logo_75)
-        imageList.add(R.drawable.long_logo_75)
+        imageList.add(R.drawable.ad1)
+        imageList.add(R.drawable.ad2)
+        imageList.add(R.drawable.ad3)
+        imageList.add(R.drawable.ad4)
+
 
         adapter = ImageAdapter(imageList, viewPager2)
 
