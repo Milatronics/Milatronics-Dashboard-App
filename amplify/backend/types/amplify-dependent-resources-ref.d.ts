@@ -13,7 +13,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "MilatronicsDashboard": {
+        "milatronicsdashboard": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"

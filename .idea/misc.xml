@@ -7,23 +7,27 @@
         <entry key="app/src/main/res/drawable/ic_devices.xml" value="0.246" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.246" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.246" />
+        <entry key="app/src/main/res/drawable/ic_prices.xml" value="0.2555" />
         <entry key="app/src/main/res/drawable/ic_stats.xml" value="0.246" />
+        <entry key="app/src/main/res/layout-v26/fragment_disease.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2289156626506024" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35625" />
-        <entry key="app/src/main/res/layout/activity_user.xml" value="0.2341485507246377" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.22" />
         <entry key="app/src/main/res/layout/content_login.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/disease_item.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_all_diseases.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_all_products.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_all_tips.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_confirm_reset_password.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/fragment_confirm_sign_up.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_devices.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.191027496382055" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.2341485507246377" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2368064952638701" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_price_trends.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_product.xml" value="0.1933295647258338" />
         <entry key="app/src/main/res/layout/fragment_scrolling.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.35625" />
@@ -32,6 +36,7 @@
         <entry key="app/src/main/res/layout/fragment_tip.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/image_container.xml" value="0.30932971014492755" />
+        <entry key="app/src/main/res/layout/location_menu_item.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/login_fragment2.xml" value="0.25" />
         <entry key="app/src/main/res/layout/product_item.xml" value="0.25" />
@@ -39,6 +44,8 @@
         <entry key="app/src/main/res/layout/tip_item.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/user_fragment.xml" value="0.254981884057971" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2555" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2555" />
       </map>
     </option>
   </component>

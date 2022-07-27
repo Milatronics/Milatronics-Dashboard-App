@@ -61,10 +61,12 @@ class LoginActivity : AppCompatActivity() {
             { attributes ->
                 Log.i("AuthFetchUserAttributes", "SignIn successful. User attributes = $attributes")
 
-                val intent = Intent(this, UserActivity::class.java)
-                attributes.forEach{intent.putExtra(it.key.keyString, it.value)}
-                startActivity(intent)
-                finish()
+                runOnUiThread {
+                    val intent = Intent(this, UserActivity::class.java)
+                    attributes.forEach{intent.putExtra(it.key.keyString, it.value)}
+                    startActivity(intent)
+                    finish()
+                }
             },
             {
                 Log.e("AuthFetchUserAttributes", "Failed to fetch user attributes", it)

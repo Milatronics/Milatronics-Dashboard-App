@@ -5,9 +5,4 @@
     android:layout_height="match_parent"
     tools:context=".DevicesFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="Devices Fragment" />
 </androidx.core.widget.NestedScrollView>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Milatronics Dashboard</string>
+    <string name="app_name">Dashboard</string>
 
     <!--Login strings-->
     <string name="cancel">Cancel</string>
@@ -7,21 +7,22 @@
     <string name="password">Password</string>
     <string name="milatronics_login_logo_desc">Milatronics Login Page</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
-    <string name="title_activity_login">Milatronics Dashboard</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="nameRequired">Name</string>
-    <string name="enter_verification_code">6-Digit Verification Code</string>
-    <string name="confirm">Confirm</string>
     <string name="forgot_password">Forgot Password?</string>
-    <string name="enter_your_email_id">Enter your email id</string>
-    <string name="reset_password">Reset Password</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up_now">Sign Up Now</string>
     <string name="or">OR</string>
+    <string name="enter_your_email_id">Enter your email id</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="enter_verification_code">6-Digit Verification Code</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="confirm">Confirm</string>
 
     <!--Bottom Navigation Menu-->
     <string name="home">Home</string>
+    <string name="prices">Prices</string>
     <string name="devices">Devices</string>
     <string name="stats">Stats</string>
 
@@ -41,6 +42,259 @@
     <!--Shrimp Diseases data-->
     <string name="shrimp_diseases_title">Shrimp Diseases</string>
     <string name="shrimp_diseases_desc">Shrimp diseases description</string>
+    <string name="disease_1_title">White spot</string>
+    <string name="disease_1_description">
+		The main cause for the white spot disease is the white spot syndrome virus (WSSV). WSSV is the lone virus of the genus Whispovirus which is the only genus in the family Nimaviridae. This virus is lethal and affects only crustaceans. The outbreaks of this virus can wipe out the entire population of shrimp in a farm within a few days. This disease infects prawns, crabs, lobsters from marine, fresh or brackish waters.
+        \n\n<b>Occurrence</b>
+        \nThe virus can infect the shrimp at any stage of its lifecycle. From eggs to broodstock the virus can develop rapid mortality. About 80% of mortalities occur within a period of three to ten days. Transmission of the disease occurs vertically from infected broodstock and horizontally through cannibalism of dying and sick prawns. There is a possibility of transmission through contaminated water also. Birds can also be carriers by transmitting the disease from one pond to another.
+        \n\n<b>Agent</b>
+        \nPart of the white spot syndrome baculovirus complex (recently renamed as nimavirus).
+        \n\n<b>Detection</b>
+        \nThe disease can be identified by watching for some signs in the animals.
+        \n1. Acutely infected shrimp show reduced food consumption
+        \n2. Lethargy
+        \n3. High mortality of 100% is seen within 3 to10 days of onset of symptoms.
+        \n4. Loose cuticles with white spots of 0.5-2.0 mm diameter is observed. It is most apparent inside the carapace.
+        \n5. Moribund shrimp often have pink to reddish-brown colouration due to expansion of cuticular chromatophores &amp; few if any white spots
+        \n\n<b>Precautions</b>
+        \n1. SPF brood stock needs to be used.
+        \n2. The eggs/nauplii need to be washed and disinfected with iodine and formalin.
+        \n3. Broodstock, nauplii needs to be screened.
+        \n4. PL and pond stages
+        \n5. Rapid changes in water quality need to be avoided.
+        \n6. Water temperature needs to be maintained above 30°C.
+        \n7. Stress needs to be avoided
+        \n8. The use of fresh feeds such as trash fish needs to be avoided.
+        \n9. Water exchange needs to be minimized to prevent the entry of virus carriers.
+        \n\n<b>Treatment</b>
+        \nThe infected ponds need to be treated with 30 ppm of chlorine to kill the infected shrimp and carriers. Associated equipment also needs to be disinfected.
+        \n\n*100% cure is not assured for White Spot.
+    </string>
+    <string name="disease_2_title">EHP</string>
+    <string name="disease_2_description">
+        Enterocytozoon hepatopenaei (EHP) is a microsporidian parasite that was named from the giant or black tiger shrimp. EHP is a categorised fungal parasite. This disease was discovered in slow growing shrimp. EHP causes the parasite to colonise the tubules in hepatopancreas. EHP does not necessarily result in mortality but the infection can cause damage to the organ which results in deprivation of absorption of nutrients. This further leads to poor growth of the shrimp. This disease reduces the immunity of the shrimp thereby leaving the shrimp open to exposure to other infections. Due to difficulty in control of this disease, EHP has been affecting shrimp production all over the continent and is a constant challenge for the aquaculture industry.
+        \n\n<b>Occurrence and Transmission</b>
+        \nEHP gets transmitted through infected PL and also through the remaining spores present in pond water and soil.
+        \nAgent: Enterocytozoon hepatopenaei Family: Enterocytozoonidae
+        \nPhylum: Microsporidia (Closely related to fungi)
+        \nSize: About 1.1 ± 0.2 by 0.6 ± 0.1um. Surrounded by a double layered spore wall
+        \n\n<b>Impact on Shrimp Aquaculture</b>
+		\n1. Unprofitable harvest
+        \n2. Retarded growth (usually not grossly visible until 2nd month of pond cultivation)
+        \n3. Increase in size variation
+        \n4. Susceptible to white faeces syndrome (WFS) and acute hepatopancreatic necrosis disease (AH PN D)
+        \n\n<b>Precautions</b>
+        \n1. Broodstock maturation facility and hatchery facility has to be clean
+		\n2. Use SPF broodstock
+        \n3. Wash &amp; disinfect eggs/nauplii with iodine, formalin
+        \n4. Screen brood stock, nauplii
+        \n5. PL &amp; pond stages
+        \n6. Rapid changes in water quality must be avoided.
+		\n7. Water temperature >30 °C needs to be maintained.
+		\n8. Stress needs to be avoided.
+        \n9. Usage of fresh feeds such as trash fish need to be avoided.Water exchange must be minimized to prevent the entry of virus carriers
+        \n\n<b>Treatment</b>
+        \nTreat infected ponds &amp; hatcheries with 30 ppm chlorine to kill infected shrimp &amp; carriers. All associated equipment also needs to be disinfected.Control of the disease in hatcheries is possible only when the hatchery and all associated areas are maintained well. All shrimp must be removed from the hatchery and then washed thoroughly with 2.5% NaOH solution. Once this step is finished the entire hatchery must be cleaned to remove the NaOH traces and the premises needs to be dried for seven days. The final step is rinsing with acidified chlorine.
+        \nTo disinfect the ponds the following steps can be taken
+        \n1. Application of CaO (quick, burnt, slaked, hot lime)
+		\n2. Cao needs to be added at 6ton/ha.
+        \n3. Add Cao to the dry pond sediment. Once it is added moisten it to activate.
+        \n4. Leave the pond for a week
+        \n5. The pH has to rise above 12 and then reverse back to the normal range.
+        \n\n*100% cure is not assured for EHP
+    </string>
+    <string name="disease_3_title">Vibriosis</string>
+    <string name="disease_3_description">
+        Vibriosis is the most prevalent disease in fishes and other organisms. It is caused by the Vibrio spp and is responsible for the high rate of mortality in aquaculture throughout the world. Vibriosis is a bacterial disease that is caused by Vibrio. Vibrio is a Gram-negative bacteria from the Vibrionaceae family. It is found everywhere around the world in all marine crustaceans which includes shrimp. Vibriosis is a bacterial disease responsible for high mortality of shrimp. It is one of the major diseases prevalent worldwide in cultured shrimp industry. Vibriosis is a series of bacterial infections caused by a bacterium that belongs to the genus Vibrio. Certain studies show that usage of microalgae, bacteriophage, and probiotic bacteria have been found to have a higher potential in reducing vibriosis.
+		\n<b>Occurrence and Detection</b>
+		\nThe agent for the occurrence of this disease is the: Vibrio spp., particularly V. harveyi &amp; V. parahaemolyticus. Vibrio infections are commonly called black shell disease, tail rot, septic hepatopancreatic necrosis, swollen hindgut syndrome. These are some signs that can be looked out for
+		\n1. Reduction or loss of appetite.
+		\n2. Lethargy
+		\n3. Red discolouration of the body
+		\n4. Yellowing of the gill tissue.
+		\n5. White patches in the abdominal muscle.
+		\n6. Discolouration and necrotic heptopancreas.
+		\n7. Luminescence
+		\n\nIn hatcheries, it is seen as
+		\n1. Luminescence in water &amp;/or shrimp body
+		\n2. Disruption of gut
+		\n3. Fouling of body
+		\n4. High mortality
+		\n\nIn ponds, it is seen as
+		\n1. Red discoloration of shrimp (especially tails) &amp; internal &amp; external necrosis
+		\n2. Low feeding
+		\n3. Chronic mortality 4.Often a secondary infection resulting from poor environmental management weakens shrimp which become susceptible to viral infections
+		\n<b>Precautions</b>
+		\nVibrio as a disease adapts well to different environmental conditions hence it is difficult to remove as become dormant under unfavourable conditions. In shrimp farms, Vibrio are found in the pond water and the gut of the shrimp.
+		\n1. Management of the pond water is the most important step in Vibrio prevention.
+		\n2. Management of gut health is the net most important step.
+		\n\nFrequent checks must be carried out to know Vibrio population in shrimp gut and pond water to understand the levels. Careful system management is key to control Vibrio. In hatcheries, we must make sure
+		\n1. Disinfect facilities are maintained
+		\n2. Equipment is clean and uncontaminated.
+		\n3. Water quality and Worker hygiene is maintained.
+		\n4. Use of bacteria-free live feeds
+		\n5. Cover culture tanks with plastic sheets to prevent transfer
+		\n\nIn ponds, we must make sure
+		\n1. Prevention by proper preparation
+		\n2. Bloom control
+		\n3. Good water &amp; feed management
+		\n4. Control of stocking density
+		\n5. Aeration to maintain optimal environmental conditions throughout the culture cycle.
+    </string>
+    <string name="disease_4_title">White Gut Disease</string>
+    <string name="disease_4_description">
+        Diseases in shrimps can be white gut disease is a major disease found in aquaculture. The White Gut disease should be prevented. White gut disease hampers the digestive system of the shrimp.
+		\n
+		\n<b>Occurrence and symptoms</b>
+		\n1. White faecal matter
+		\n2. Less feed intake
+		\n3. Loose shell problem
+		\n4. Slow Growth and retardation
+		\n5. The gut appears white in colour.
+		\n6. Ponds affected with white faeces syndrome show white faecal strings floating on the pond surface.
+		\n7. Shrimp show white intestines.
+		\n
+		\n<b>Precautions</b>
+		\n1. Use Gut probiotic after 20 DOC
+		\n2. Proper Feed Management
+		\n3. Proper Water Management
+		\n4. Proper Bottom Management
+		\n5. Reduction of the accumulation of organic load thereby curtail the bacterial load and Blue - green algae.
+		\n6. Selection of good quality seed and following good management practices
+		\n
+		\n<b>Treatment</b>
+		\n1. Usage of Gut probiotic in 2 meals (dosage based on gut severity)
+		\n2. Yeast and Curd in another 2 meals.
+    </string>
+    <string name="disease_5_title">EMS</string>
+    <string name="disease_5_description">
+        Early mortality syndrome is also called Hepatopancreatic Acute Necrosis syndrome. This is a relatively new disease that is being observed in shrimp. This disease transmits orally and infects the gastrointestinal tract of the shrimp. The main digestive organ of the shrimp, hepatopancreas is damaged due to the release of a toxin. The toxin causes damage to the tissue and in turn, the hepatopancreas becomes dysfunctional. The disease occurs in the first 7 to 30 days.
+		\n
+		\n<b>Agent</b>
+		\nThe cause for the disease was identified as a bacterial agent called Vibrio parahaemolyticus.
+		\n
+		\n<b>Detection</b>
+		\nHigh mortalities leading up to 100% occur within the first 30 days. Once the disease strikes a pond it can be detected by observing for
+		\n1. Swimming at the bottom of the pond.
+		\n2. Erratic swimming.
+		\n3. Reduced growth
+		\n4. Reduction in size and whitening of hepatopancreas.
+		\n5. Dark spots on and hardening of the hepatopancreas
+		\n6. The exoskeleton is soft in texture.
+		\n
+		\n<b>Precautions</b>
+		\nThe precautions that need to be taken to prevent an occurrence of EMS are
+		\n1. Good pond practices like maintenance water quality including PH, Salinity, DO.
+		\n2. Pond bottom management is required.
+		\n3. Broodstock that is free of EMS. Selection of stock that has the highest survival for the next crop.
+		\n4. Avoid overfeeding and regularly remove sludge.
+		\n5. Use of probiotics and polyculture to manage water.
+		\n6. Use of a nursery pond until the post-larvae are bigger and more robust. About 20 days in a nursery pond gives a chance to evaluate for all medical conditions.
+		\n7. Feed additives that reduce the risk of EMS can be used, like essential oils, immunostimulants.
+		\n8. Better farm infrastructure like biosecurity intensive ponds to ensure management of the small pond is easier.
+		\n
+		\n<b>Treatment</b>
+		\nThe use of chlorine or ozone for disinfection of the pond helps in the elimination of multiple pathogens.
+    </string>
+    <string name="disease_6_title">RMS</string>
+    <string name="disease_6_description">
+        Running Mortality Syndrome (RMS) is a relatively new disease. Since, 2011 this disease has destroyed a lot of farms in the coastal regions of Andhra Pradesh and Tamil Nadu, India. The main characteristic of this disease is the continuous low-level mortalities during the entire culture period. Investigations have shown no known associations with any of the existing shrimp diseases. Shrimp from RMS-affected farms have a very high load of Vibrio spp. The affected shrimp tested negative for all other bacterial or viral diseases. Mortalities due to the disease start after day 40 of the culture period. Some shrimp survive despite being affected and continue to grow until the harvest period. Despite various investigations and studies, any infectious nature is not attributed to RMS.
+		\n
+		\n<b>Occurrence &amp; Detection</b>
+		\n1. Continuous mortality is seen at the bottom of the pond.
+		\n2. Affected shrimp show whitish musculature in the abdominal segment.
+		\n3. Physically, red and necrotic antennae, red tail, and red walking legs (Periopods) are observed.
+		\n4. Abnormally high FCR values are detected. The survival rate is poor.
+		\n5. The faecal matter of these infected shrimp is yellow or white.
+		\n6. Empty or red stomach and a reddish-yellow hepatopancreas are classic clinical signs of the disease.
+		\n7. Some shrimp samples show an enlarged nucleus and an increased inter hepatopancreatic tubular space. 8. Mortality is observed only during the inter-moult stage.
+		\n
+		\n<b>Prevention</b>
+		\n1. The most essential points to consider are good water management practices.
+		\n2. Reduce the stocking density of the pond. Overstocking might lead to an increased number of mortalities.
+		\n3. The shrimp become more susceptible to disease under stress. Hence, stress management techniques need to be put in place.
+		\n4. Regular removal of the dead shrimp
+		\n5. Reduction of the feed quantity or even suspending of feed for a few days reduces the mortality.
+		\n6. Culture practices like stocking larger PL, nursery management, and partial harvest reduce the incidence of RMS.
+		\n
+		\n<b>Treatment &amp; Testing</b>
+		\n1. No specific treatment is available.
+		\n2. No specific diagnosis patterns are followed.
+		\n3. Testing for high Vibrio loads in the hepatopancreas is a common indication of the disease.
+		\n4. No known correlation to the water quality parameters like pH, ammonia, Nitrite nitrogen, etc.
+    </string>
+    <string name="disease_7_title">IMNV</string>
+    <string name="disease_7_description">
+        IMNV is a virus that infects penaeid shrimp. The Penaeus Vannamei is known to be significantly affected by this disease resulting in a high rate of mortality. The IMNV is a double stranded RNA virus and is closely related to the family Totiviridae. This disease was first reported in India in 2016. The disease is seen in juveniles and adult vannamei. This disease can cause economic losses that are significantly high because of associated mortalities. The main reason for the onset of this disease is stressful conditions for the vannamei.
+		\n
+		\n<b>Occurrence &amp; Detection</b>
+		\n1. The virus spreads farm to farm as it remains in the gut and faeces of birds that have fed on these infected shrimp.
+		\n2. The disease spreads because of cannibalism and vertically from broodstock to progeny.
+		\n3. White and reddish necrotic areas are seen in the distal abdominal segments.
+		\n4. The tail and fin look whitish and may have a cooked appearance.
+		\n5. AN enlarged lymphoid organ is observed.
+		\n6. The affected shrimp show signs of sluggishness and low feed intake.
+		\n7. Disoriented swimming of these shrimp at the surface of the pond is observed.
+		\n8. FCR of populations that are affected may increase. 9. Mortalities may increase suddenly. The average range is 40% to 70% mortality.
+		\n
+		\n<b>Precautions</b>
+		\n1. The use of IMNV-free broodstock is the most effective way to avoid this disease.
+		\n2. Stocking of post-larvae of a minimum of PL15 helps in minimizing the risk.
+		\n3. Stress tests must be conducted for healthy PL. The PL must test negative for IMNV.
+		\n4. Strict biosecurity measures are to be adopted. Fencing for birds and crabs reservoir ponds is a must.
+		\n5. Good sanitation methods for men, machinery, and materials must be catered for.
+		\n6. Maintenance of good water quality, feed, and monitoring of the shrimp is essential.
+		\n7. Disinfecting the eggs and larvae is a good management practice to follow.
+        \n
+		\n<b>Treatment &amp; Testing</b>
+		\n1. There is no treatment for this disease. Prevention is the only way to control the disease. Lateral flow test strip.
+		\n2. The disease may be detected using the RT-PCR tests and the
+    </string>
+    <string name="disease_8_title">External Fouling</string>
+    <string name="disease_8_description">
+        The fouling disease is a common condition is seen in shrimp. This infection is seen more in tiger shrimp than in white leg shrimp. The fouling syndrome is mainly due to delayed moulting, nutritional deficiencies, poor water conditions, and deprived pond soil. The affected shrimp loses weight and turns into a cotton-like shell. The outbreak of secondary infections because of bacteria, fungi, and protozoa attacks harms the crop. The farmer faces economic losses due to these diseases. The poor survival rate of the affected pond is because of the cannibalistic behaviour of the shrimp.
+		\n
+		\n<b>Occurrence &amp; Detection</b>
+		\n1. There is a visible case of external fouling.
+		\n2. Poor water conditions are a major contributor to the onset of this disease.
+		\n3. If the gills of the shrimp are affected. If fouling is seen on the gills, then there is a chance of mortality.
+		\n4. Nutritional deficiencies and poor pond bottom compromise the immunity of the shrimp.
+		\n5. High organic load also allows for infestation of protozoa on the surface of the shrimp.
+		\n6. A decline in feeding is the first indication of this disease.
+		\n7. Cannibalistic behaviour of the affected shrimp is also seen in the pond.
+		\n8. Delays in moulting are also considered a cause for the onset of these infestations.
+		\n9. All water parameters like pH, salinity, and dissolved oxygen levels affect the pond.
+		\n10. The affected shrimp have cotton-like fouling on the exoskeleton and muscle tissue.
+		\n11. Affected shrimp are restless and movements are hampered.
+		\n12. Severely affected shrimp develop respiratory problems.
+		\n
+		\n<b>Prevention</b>
+		\n1. Water quality has to be maintained throughout the culture period.
+		\n2. All water parameters have to be checked and corrected periodically.
+		\n3. The primary infection has to be identified and treated as all these parasitic diseases are secondary infestations.
+		\n4. Moulting needs to be induced.
+		\n5. Nutritional deficiencies need to be corrected.
+		\n6. Organic load and silt must be reduced by conducting water exchange with good quality water.
+		\n7. Pond bottom has to be maintained with periodic removal of sediments and dead shrimp.
+		\n
+		\n<b>Treatment &amp; Testing</b>
+		\n1. Moulting needs to be induced using Nanoquat.
+		\n2. The protozoan infestations can be viewed using a microscope.
+		\n3. Testing of the water sample for dissolved oxygen levels, salinity, and pH parameters is conducted from time to time.
+		\n4. A single treatment of Formalin (15 to 20 ppm) for ponds or a dip treatment for affected individuals in Formalin (50-100 ppm) for half an hour.
+		\n5. Good aeration must be maintained during treatment.
+    </string>
+
+    <!-- Shrimp farming Tips-->
     <string name="shrimp_farming_tips_title">Shrimp Farming Tips</string>
     <string name="shrimp_farming_tips_desc">Shrimp farming tips description</string>
+
+    <!-- Pricing Fragment Strings-->
+    <string name="price_trends">Price Trends</string>
+    <string name="location">Location</string>
+    <string name="count">Count</string>
+    <string name="today_s_price">Today\'s Price</string>
+    <string name="no_data_found">No data found for selected area.</string>
+
+
 </resources>

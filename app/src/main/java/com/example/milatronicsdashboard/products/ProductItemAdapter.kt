@@ -15,9 +15,14 @@ import com.example.milatronicsdashboard.R
 class ProductItemAdapter(
     private val context: Context,
     private val productDataset: List<Product>,
-    private val itemWidth: Int = 0)
+    private val isHorizontal: Boolean = false)
     : RecyclerView.Adapter<ProductItemAdapter.ProductItemViewHolder>()
 {
+    companion object{
+        const val WIDTH = 230
+        const val HEIGHT = 230
+    }
+
     // Provide a reference to the views for each data item in the viewGroup
     class ProductItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val imageView: ImageView = view.findViewById(R.id.product_item_image)
@@ -41,8 +46,10 @@ class ProductItemAdapter(
             val action = HomeFragmentDirections.actionToProductFragment(product = product)
             findNavController(holder.view).navigate(action)
         }
-        if(itemWidth != 0)
-            holder.view.layoutParams.width = itemWidth
+        if(isHorizontal){
+            holder.view.layoutParams.width = WIDTH
+            holder.imageView.layoutParams.height = HEIGHT
+        }
     }
 
     override fun getItemCount() = productDataset.size

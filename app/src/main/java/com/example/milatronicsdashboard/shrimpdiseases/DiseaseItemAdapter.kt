@@ -15,9 +15,13 @@ import com.example.milatronicsdashboard.R
 class DiseaseItemAdapter(
     private val context: Context,
     private val diseaseDataset: List<Disease>,
-    private val itemWidth: Int = 0)
+    private val isHorizontal: Boolean = false)
     : RecyclerView.Adapter<DiseaseItemAdapter.DiseaseItemViewHolder>()
 {
+    companion object{
+        const val WIDTH = 270
+        const val HEIGHT = 170
+    }
     // Provide a reference to the views for each data item in the viewGroup
     class DiseaseItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val imageView: ImageView = view.findViewById(R.id.disease_item_image)
@@ -41,8 +45,11 @@ class DiseaseItemAdapter(
             val action = HomeFragmentDirections.actionToDiseaseFragment(disease = disease)
             findNavController(holder.view).navigate(action)
         }
-        if(itemWidth != 0)
-            holder.view.layoutParams.width = itemWidth
+
+        if(isHorizontal){
+            holder.view.layoutParams.width = WIDTH
+            holder.imageView.layoutParams.height = HEIGHT
+        }
     }
 
     override fun getItemCount() = diseaseDataset.size

@@ -10,27 +10,31 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/disease_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:paddingVertical="54dp"
+            tools:src="@drawable/disease_1_img"/>
+
         <TextView
             android:id="@+id/disease_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textStyle="bold"
             tools:text="Disease Title" />
-        <ImageView
-            android:id="@+id/disease_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:importantForAccessibility="no"
-            android:scaleType="fitCenter"
-            tools:src="@drawable/product_2_img"/>
         <TextView
             android:id="@+id/disease_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            android:layout_marginTop="-30dp"
             android:textAppearance="?attr/textAppearanceHeadline6"
-            tools:text="@string/product_3_description" />
+            android:justificationMode="inter_word"
+            tools:text="@string/disease_1_description" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

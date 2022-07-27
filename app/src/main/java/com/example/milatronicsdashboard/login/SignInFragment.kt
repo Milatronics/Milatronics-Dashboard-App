@@ -46,7 +46,7 @@ class SignInFragment : Fragment() {
         // Clear the password length error once more than 8 characters are typed.
         binding.passwordEditTextSignIn.setOnKeyListener { _, _, _ ->
             if (isPasswordValid(binding.passwordEditTextSignIn.text)) {
-                binding.passwordEditTextSignIn.error = null //Clear the error
+                binding.passwordTextInputSignIn.error = null //Clear the error
             }
             false
         }
@@ -55,7 +55,7 @@ class SignInFragment : Fragment() {
     // Confirms the password is valid and then attempts to sign in the user.
     private fun signIn(){
         if (!isPasswordValid(binding.passwordEditTextSignIn.text)) {
-            binding.passwordEditTextSignIn.error = getString(R.string.error_password)
+            binding.passwordTextInputSignIn.error = getString(R.string.error_password)
         }
         else {
             val email = binding.emailTextEditText.text.toString().trim()

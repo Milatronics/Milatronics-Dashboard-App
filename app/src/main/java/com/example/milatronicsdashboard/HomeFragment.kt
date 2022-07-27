@@ -24,12 +24,14 @@ import kotlin.math.abs
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private val itemWidth = 250 // Width of the material design card items
+    private val isHorizontal = true
+    
     //ADS stuff
     private lateinit var  viewPager2: ViewPager2
     private lateinit var handler : Handler
     private lateinit var imageList:ArrayList<Int>
     private lateinit var adapter: ImageAdapter
+    
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -38,7 +40,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val horizontalScrollView = HorizontalScrollView(context)
+        
         //some stuff for ADS
 
         viewPager2 = view.findViewById(R.id.viewPager2)
@@ -77,45 +79,24 @@ class HomeFragment : Fragment() {
 
         // Set up products
         val productDataset = ProductsDataSource().loadProducts()
-        binding.productsRecyclerView.adapter = ProductItemAdapter(activity as Context, productDataset, itemWidth)
+        binding.productsRecyclerView.adapter = ProductItemAdapter(activity as Context, productDataset, isHorizontal)
         binding.viewAllProducts.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allProductsFragment)
         }
 
         // Set up shrimp diseases
         val diseaseDataset = DiseaseDataSource().loadProducts()
-        binding.diseasesRecyclerView.adapter = DiseaseItemAdapter(activity as Context, diseaseDataset, itemWidth)
+        binding.diseasesRecyclerView.adapter = DiseaseItemAdapter(activity as Context, diseaseDataset, isHorizontal)
         binding.viewAllDiseases.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allDiseasesFragment)
         }
 
         // Set up shrimp farming tips
         val tipsDataset = TipsDataSource().loadProducts()
-        binding.tipsRecyclerView.adapter = TipsItemAdapter(activity as Context, tipsDataset, itemWidth)
+        binding.tipsRecyclerView.adapter = TipsItemAdapter(activity as Context, tipsDataset, isHorizontal)
         binding.viewAllTips.setOnClickListener{
             findNavController().navigate(R.id.action_homeFragment_to_allTipsFragment)
         }
-
-        /*   class SimpleThread: Thread() {
-              public override fun run() {
-                  horizontalScrollView.fullScroll(View.FOCUS_RIGHT)
-                  Thread.sleep(1000)
-                  horizontalScrollView.fullScroll(View.FOCUS_LEFT)
-                  Thread.sleep(1000)
-              }
-          }
-
-       Thread(
-            {
-                horizontalScrollView.fullScroll(View.FOCUS_RIGHT)
-                Thread.sleep(1000)
-                horizontalScrollView.fullScroll(View.FOCUS_LEFT)
-                Thread.sleep(1000)
-                //val toast = Toast.makeText(context, "Hello Javatpoint2", Toast.LENGTH_SHORT)
-                //toast.show()
-                //Thread.sleep(1000)
-            }
-        ).start()*/
 
     }
 
