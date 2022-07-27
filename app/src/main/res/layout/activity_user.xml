@@ -52,6 +52,8 @@ tools:context=".UserActivity">
         </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+        <!-- app:layout_constraintTop_toTopOf="parent"-->
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/snackbar_layout"
         android:layout_width="match_parent"

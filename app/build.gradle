@@ -52,4 +52,6 @@ dependencies {
     implementation 'com.amplifyframework:core:1.36.2'
     implementation 'com.amplifyframework:aws-auth-cognito:1.36.2'
     implementation 'com.amplifyframework:aws-api:1.36.2'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
