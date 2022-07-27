@@ -18,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:importantForAccessibility="no"
-            android:scaleType="fitCenter"
-            tools:src="@drawable/product_2_img"/>
+            android:scaleType="centerCrop"
+            tools:src="@drawable/disease_1_img"/>
 
         <TextView
             android:id="@+id/disease_item_title"
@@ -30,6 +30,8 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
+            android:maxLines="1"
+            android:ellipsize="end"
             tools:text="Disease Title" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

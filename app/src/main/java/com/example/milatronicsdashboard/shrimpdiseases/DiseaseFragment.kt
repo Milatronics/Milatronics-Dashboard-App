@@ -25,8 +25,8 @@ class DiseaseFragment : Fragment() {
         disease = args.disease
 
         (activity as AppCompatActivity).supportActionBar?.title = getString(disease.titleResourceId)
-        binding.diseaseTitle.text = context?.resources?.getString(disease.titleResourceId)
+        binding.diseaseTitle.text = getString(disease.titleResourceId)
         binding.diseaseImage.setImageResource(disease.imageResourceId)
-        binding.diseaseDescription.text = context?.resources?.getString(disease.descriptionResourceId)
+        binding.diseaseDescription.text = getText(disease.descriptionResourceId)
     }
 }

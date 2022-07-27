@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.246" />
         <entry key="app/src/main/res/drawable/ic_prices.xml" value="0.2555" />
         <entry key="app/src/main/res/drawable/ic_stats.xml" value="0.246" />
+        <entry key="app/src/main/res/layout-v26/fragment_disease.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2289156626506024" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.35625" />
@@ -22,7 +23,7 @@
         <entry key="app/src/main/res/layout/fragment_confirm_reset_password.xml" value="0.2536231884057971" />
         <entry key="app/src/main/res/layout/fragment_confirm_sign_up.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_devices.xml" value="0.18177083333333333" />
-        <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/fragment_disease.xml" value="0.191027496382055" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />

@@ -10,7 +10,6 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.milatronicsdashboard.HomeFragmentDirections
 import com.example.milatronicsdashboard.R
-import com.example.milatronicsdashboard.products.ProductItemAdapter
 
 /** Adapter for the recycler views in home and all items fragments. Displays [Disease] data object */
 class DiseaseItemAdapter(
@@ -20,8 +19,8 @@ class DiseaseItemAdapter(
     : RecyclerView.Adapter<DiseaseItemAdapter.DiseaseItemViewHolder>()
 {
     companion object{
-        const val WIDTH = 230
-        const val HEIGHT = 230
+        const val WIDTH = 270
+        const val HEIGHT = 170
     }
     // Provide a reference to the views for each data item in the viewGroup
     class DiseaseItemViewHolder(val view: View) : RecyclerView.ViewHolder(view){
@@ -48,8 +47,8 @@ class DiseaseItemAdapter(
         }
 
         if(isHorizontal){
-            holder.view.layoutParams.width = ProductItemAdapter.WIDTH
-            holder.imageView.layoutParams.height = ProductItemAdapter.HEIGHT
+            holder.view.layoutParams.width = WIDTH
+            holder.imageView.layoutParams.height = HEIGHT
         }
     }
 

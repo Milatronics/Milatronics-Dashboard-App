@@ -30,6 +30,8 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
+            android:maxLines="1"
+            android:ellipsize="end"
             tools:text="Tip Title" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
