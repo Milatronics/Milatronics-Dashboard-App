@@ -28,6 +28,6 @@ class ProductFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = getString(product.titleResourceId)
         binding.productTitle.text = getString(product.titleResourceId)
         binding.productImage.setImageResource(product.imageResourceId)
-        binding.productDescription.text = getString(product.descriptionResourceId)
+        binding.productDescription.text = getText(product.descriptionResourceId)
     }
 }

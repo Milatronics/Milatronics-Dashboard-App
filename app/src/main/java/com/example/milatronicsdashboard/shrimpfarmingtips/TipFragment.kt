@@ -25,8 +25,8 @@ class TipFragment : Fragment() {
         tip = args.tip
 
         (activity as AppCompatActivity).supportActionBar?.title = getString(tip.titleResourceId)
-        binding.tipTitle.text = context?.resources?.getString(tip.titleResourceId)
+        binding.tipTitle.text = getString(tip.titleResourceId)
         binding.tipImage.setImageResource(tip.imageResourceId)
-        binding.tipDescription.text = context?.resources?.getString(tip.descriptionResourceId)
+        binding.tipDescription.text = getText(tip.descriptionResourceId)
     }
 }

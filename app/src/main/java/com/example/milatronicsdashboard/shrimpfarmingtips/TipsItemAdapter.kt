@@ -10,7 +10,6 @@ import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.milatronicsdashboard.HomeFragmentDirections
 import com.example.milatronicsdashboard.R
-import com.example.milatronicsdashboard.products.ProductItemAdapter
 import com.example.milatronicsdashboard.shrimpdiseases.Disease
 
 /** Adapter for the recycler views in home and all items fragments. Displays [Disease] data object */
@@ -49,8 +48,8 @@ class TipsItemAdapter(
         }
 
         if(isHorizontal){
-            holder.view.layoutParams.width = ProductItemAdapter.WIDTH
-            holder.imageView.layoutParams.height = ProductItemAdapter.HEIGHT
+            holder.view.layoutParams.width = WIDTH
+            holder.imageView.layoutParams.height = HEIGHT
         }
     }
 

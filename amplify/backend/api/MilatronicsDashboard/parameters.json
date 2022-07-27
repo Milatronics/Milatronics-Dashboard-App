@@ -1,6 +1,0 @@
-{
-  "AppSyncApiName": "MilatronicsDashboard",
-  "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-07-24T19:41:10.273Z"
-}
