@@ -4,15 +4,22 @@ import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TableRow
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.amplifyframework.api.graphql.PaginatedResult
+import com.amplifyframework.api.graphql.model.ModelQuery
+import com.amplifyframework.core.Amplify
+import com.amplifyframework.datastore.generated.model.MarketPrice
 import com.example.milatronicsdashboard.databinding.FragmentHomeBinding
 import com.example.milatronicsdashboard.products.ProductItemAdapter
 import com.example.milatronicsdashboard.products.ProductsDataSource
@@ -78,6 +85,10 @@ class HomeFragment : Fragment() {
             }
         })
 
+        binding.viewAllPrices.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_priceTrendsFragment)
+        }
+
         // Set up products
         val productDataset = ProductsDataSource().loadProducts()
         binding.productsRecyclerView.adapter = ProductItemAdapter(activity as Context, productDataset, isHorizontal)
@@ -115,6 +126,68 @@ class HomeFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
+        fetchPrices(PriceTrendsFragment.LOCATIONS[0])
         handler.postDelayed(runnable , 2000)
+    }
+
+    private fun fetchPrices(location: String){
+        clearTable()
+        displayNoData()
+
+        Amplify.API.query(
+            ModelQuery.list(MarketPrice::class.java, MarketPrice.LOCATION.eq(location)),
+            {displayData(it.data)},
+            { Log.e("API", "Query failed", it)}
+        )
+    }
+
+    private fun displayData(data: PaginatedResult<MarketPrice>){
+        activity?.runOnUiThread{
+            if(!data.items.none())
+                clearTable()
+
+            val maxRows = 3
+            var curRows = 0;
+            data.sortedByDescending {it.count}.forEach{ marketPrice ->
+                Log.i("API", "$marketPrice")
+
+                if(curRows++ < maxRows){
+                    val count = TextView(requireContext())
+                    count.text = marketPrice.count.toString()
+                    count.textAlignment = View.TEXT_ALIGNMENT_CENTER
+
+                    val price = TextView(requireContext())
+                    price.text = String.format("\u20B9 %.2f", marketPrice.price)
+                    price.textAlignment = View.TEXT_ALIGNMENT_CENTER
+
+                    val newRow = TableRow(requireContext())
+                    newRow.setPadding(0, 8, 0, 8)
+                    newRow.addView(count)
+                    newRow.addView(price)
+
+                    binding.pricesTableLayoutHome.addView(newRow)
+                }
+            }
+        }
+    }
+
+    private fun displayNoData(){
+        val noDataText = TextView(requireContext())
+        noDataText.text = getString(R.string.no_data_found)
+        noDataText.textAlignment = View.TEXT_ALIGNMENT_CENTER
+
+        val noDataRow = TableRow(requireContext())
+        noDataRow.setPadding(0, 8, 0, 8)
+        noDataRow.addView(noDataText)
+
+        val noDataTextLayoutParams = noDataText.layoutParams as TableRow.LayoutParams
+        noDataTextLayoutParams.span = 2
+        noDataText.layoutParams = noDataTextLayoutParams
+
+        binding.pricesTableLayoutHome.addView(noDataRow)
+    }
+
+    private fun clearTable(){
+        binding.pricesTableLayoutHome.removeViews(1, binding.pricesTableLayoutHome.childCount - 1)
     }
 }

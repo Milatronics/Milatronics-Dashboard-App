@@ -32,6 +32,61 @@
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/prices_home"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+
+           android:paddingTop="8dp">
+
+           <TextView
+               android:id="@+id/prices_home_title_textview"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:padding="8dp"
+               android:text="@string/prices"
+               android:textAppearance="?attr/textAppearanceHeadline6"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"/>
+
+           <TextView
+               android:id="@+id/view_all_prices"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:padding="8dp"
+               android:text="@string/view_all"
+               android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+               android:textColor="@color/primaryDarkColor"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TableLayout
+               android:id="@+id/prices_table_layout_home"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="8dp"
+               android:stretchColumns="*"
+               app:layout_constraintTop_toBottomOf="@id/prices_home_title_textview">
+
+               <TableRow
+                   android:background="#E1E3E5"
+                   android:paddingVertical="8dp">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:text="@string/count"
+                       android:textAlignment="center"
+                       android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:text="@string/today_s_price"
+                       android:textAlignment="center"
+                       android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+               </TableRow>
+           </TableLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/products_home"
             android:layout_width="match_parent"

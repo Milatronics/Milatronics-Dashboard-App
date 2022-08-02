@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_to_tipFragment"
             app:destination="@id/tipFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_priceTrendsFragment"
+            app:destination="@id/priceTrendsFragment" />
     </fragment>
     <fragment
         android:id="@+id/devicesFragment"
